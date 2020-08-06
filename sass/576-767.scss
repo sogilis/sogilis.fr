@@ -2386,3 +2386,16 @@ textarea:focus{
 		width: 100px;
 	}
 }
+
+
+.mentions_legales{
+	padding-top: 200px;
+	margin-bottom: 150px;
+
+	p{
+		font-family: 'Montserrat', sans-serif;
+		color:$medium-grey;
+		font-size:1em;
+		font-weight:300;
+	}
+}
