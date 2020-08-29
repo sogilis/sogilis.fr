@@ -1,0 +1,39 @@
+/**
+TODO
+Should be merged with shared.css
+As advised by Alban, use variables for all z-index
+TODO
+replace font-weight: number by variable
+replace border by variables
+ **/
+
+:root {
+  --z-index-foreground: 2;
+  --z-index-1: 0;
+  --z-index-normal: 0;
+  --z-index-background: -1;
+}
+
+#langselectorfr {
+  position:fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 3rem;
+  width: 8rem;
+  z-index: var(z-index-foreground);
+  background: linear-gradient(to right, rgba(0,188,180,1) 0%, rgba(122,159,180,1) 100%);
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#langselectorfr-anchor {
+  color: white;
+  font-family: 'EB Garamond', serif;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  padding-left: 0.6rem;
+  text-decoration: none;
+}
