@@ -1,0 +1,110 @@
+#servicezone1 {
+  margin-bottom: 3.125rem;
+}
+
+#servicezone1-article1-img_desktop_smartphone_cloud {
+  flex: 0 0 64%;
+}
+
+#servicezone1-article1-textzone {
+  position: relative;
+}
+
+#servicezone1-article1-textzone-cloud {
+  height: 30%;
+  position: absolute;
+  margin-left: -4rem;
+  margin-top: -1rem;
+}
+
+#servicezone1-article1-textzone-text {
+  margin-left: 10%;
+}
+
+#servicezone1-article1-textzone-text-h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: var(--font-sans-serif);
+  color: var(--light-grey);
+  margin-top: 20%;
+}
+
+#servicezone1-article1-textzone-text-h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--wolf-blue);
+}
+
+#servicezone1-article1-textzone-text-p {
+  color: var(--medium-grey);
+  font-weight: 300;
+}
+
+#servicezone1-article2 {
+  display: grid;
+  padding-left: 4rem;
+  grid-gap: 5%;
+  width: 71%;
+  grid-template-areas:
+    '.                              servicezone1-article2-section1 servicezone1-article2-section1 .'
+    'servicezone1-article2-section2 servicezone1-article2-section2 servicezone1-article2-section3 servicezone1-article2-section3';
+}
+
+#servicezone1-article2-section1 {
+  grid-area: servicezone1-article2-section1;
+}
+
+#servicezone1-article2-section2 {
+  grid-area: servicezone1-article2-section2;
+}
+
+#servicezone1-article2-section3 {
+  grid-area: servicezone1-article2-section3;
+}
+
+#servicezone3 {
+  background-color: var(--super-light-grey2);
+  box-shadow: var(--box-shadow);
+  padding: 5rem 0;
+}
+
+#servicezone3-article {
+  flex-direction: column;
+}
+
+#servicezone3-article-section1 {
+  width: 45%;
+  margin: 0 auto 3rem auto;
+}
+
+#servicezone3-article-section1-p {
+  margin-top: 2rem;
+}
+
+
+#servicezone3-article-section2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.servicezone3-article-section2-griditem {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  height: 7.5rem;
+}
+
+.servicezone3-article-section2-griditem::after {
+  width: 1.8rem;
+  height: 0.3rem;
+  top: calc(75% - 0.15rem);
+}

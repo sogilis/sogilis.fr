@@ -12,6 +12,21 @@ replace border by variables
   --z-index-1: 0;
   --z-index-normal: 0;
   --z-index-background: -1;
+  /** TODO Factorize into Blog index-page.css */
+  --header-size: 7rem;
+  --font-sans-serif: "Montserrat", sans-serif;
+  --light-grey: #D3D3D3;
+  /** TODO factorize with all box-shadow */
+  --box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  /** TODO remove color from #articlepage */
+  color: var(--medium-grey);
+}
+
+h2 {
+  color: var(--medium-grey)
 }
 
 #langselectorfr {
@@ -36,4 +51,83 @@ replace border by variables
   font-weight: bold;
   padding-left: 0.6rem;
   text-decoration: none;
+}
+
+main {
+  padding-top: var(--header-size);
+}
+
+/* TODO factorize with `footer-address-name::before` and others */
+.hyphendeco::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: var(--light-electric-blue);
+}
+
+.hyphendecoafter::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: var(--light-electric-blue);
+}
+
+.hyphendeco-title::before {
+  height: 0.3rem;
+  /**
+   * On boostrap, we have line-height: 1.5
+   * 0.15rem === 0.3rem / 2
+   */
+  margin-top: calc(1.5em / 2 - 0.15rem);
+}
+
+.hyphendeco-title-small,
+.hyphendeco-title-small-textfollowing {
+  margin-left: 1.56rem;
+}
+
+.hyphendeco-title-small::before {
+  margin-left: -1.56rem;
+  width: 1rem;
+}
+
+.hyphendeco-title-medium {
+  margin-left: 4rem;
+}
+
+.hyphendeco-title-medium::before {
+  margin-left: -2rem;
+  width: 1.25rem;
+}
+
+.hyphendeco-title-big,
+.hyphendeco-title-big-textfollowing {
+  margin-left: 2.25rem;
+}
+
+.hyphendeco-title-big::before {
+  margin-left: -2.25rem;
+  width: 1.56rem;
+}
+
+.title-16 {
+  font-size: 1.6rem;
+}
+
+.title-17 {
+  font-size: 1.7rem;
+}
+
+.title-18 {
+  font-size: 1.8rem;
+}
+
+.title-20 {
+  font-size: 2.0rem;
+}
+
+.font-wolf-blue-bold {
+  font-size: 1.1rem;
+  color: var(--wolf-blue);
+  font-weight: 700;
 }
