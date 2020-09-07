@@ -1,0 +1,26 @@
+header {
+  background-color: transparent;
+}
+
+header.header--scrollstate {
+  background-color: #fff;
+}
+
+#homezone1 {
+  background-color: var(--super-light-grey);
+  display: flex;
+}
+
+#homezone1_text {
+  padding-top: var(--header-size);
+  /* flex: 1 1 auto; */
+  /* display: flex; */ /* Defined by class `maincolumn */
+  /* flex: 1 1 auto; */
+}
+
+#homezone1_desktopscreen_img {
+  display: inline-block;
+  /* flex: initial; */
+  /* flex: 0 0 0; */
+
+}
