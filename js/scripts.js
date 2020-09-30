@@ -121,3 +121,25 @@ const throwError = (message) => {
     }
   });
 })();
+
+
+/**
+ * ============================================================================
+ * Job page
+ * ============================================================================
+ */
+
+ const toggleJobDetails = (id) => {
+   const addedClass = 'open';
+   const panelDetailId = id + '-details';
+   const detailPanel = document.getElementById(panelDetailId);
+   if (detailPanel) {
+     let panelClasses = detailPanel.getAttribute('class').split(' ');
+     if (panelClasses.includes(addedClass)) {
+      panelClasses = panelClasses.filter(className => className != addedClass);
+     } else {
+      panelClasses.push(addedClass);
+    }
+    detailPanel.setAttribute('class', panelClasses.join(' '));
+   }
+ }
