@@ -1627,6 +1627,9 @@ textarea:focus {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+.jobs_zone_2 .element .panel.open {
+  max-height: none;
+}
 /* line 1602, ../sass/sup1200.scss */
 .jobs_zone_2 .element .panel .title_name {
   font-size: 1em;

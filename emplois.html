@@ -239,7 +239,7 @@
                             <div class="col-12 col-lg-12">
                                 <p class="text_montserrat">Nous recherchons des développeuses et développeurs ainsi que des architectes logiciels expérimentés pour renforcer notre équipe, et pour nous aider à produire des logiciels innovants et robustes.</p>
                             </div>
-                            <a class="btn_dark_grey">En Savoir Plus
+                            <a class="btn_dark_grey" id="job-1">En Savoir Plus
                                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
                                 <style type="text/css">
@@ -250,7 +250,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="panel">
+                    <div class="panel" id="job-1-details">
                         <span class="title_name">Soyez réactif.</span>
                             <p class="text_montserrat">
                                 Sogilis est une société de services libérée basée à Grenoble proposant de l’expertise à ses clients autour de trois thématiques : développement de logiciels critiques et/ou certifiables, le développement Web / Cloud Native (micro-services, IaaS) et l’IOT. Nous intervenons sur toutes les phases d’un projet, à savoir de la caractérisation du besoin à l’industrialisation en passant par les preuves de concept.<br/><br/>
@@ -305,7 +305,7 @@
 
                         <br/><br/>
                          <span class="title_name">Comment postuler ?</span>
-                            <p class="text_montserrat">Par Email → CV + Lettre de motivation à grenoble.job@sogilis.com</p>
+                            <p class="text_montserrat">Par Email → CV + Lettre de motivation à grenoble.job@sogilis.com ou lyon.job@sogilis.com</p>
                         <br/><br/>
                     </div>
                 </div>
@@ -327,7 +327,7 @@
                                 <p class="text_montserrat">Nous recherchons des développeurs H/F expérimentés pour renforcer notre équipe et nous aider à produire des applications Web et/ou Cloud Natives basées sur les dernières technologies et capables de s’adapter au nombre d’utilisateurs à servir ou à la charge de calcul attendue.</p>
                             </div>
 
-                            <a class="btn_dark_grey">En Savoir Plus
+                            <a class="btn_dark_grey" id="job-2">En Savoir Plus
                                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
                                 <style type="text/css">
@@ -342,7 +342,7 @@
                     </div>
 
 
-                    <div class="panel">
+                    <div class="panel" id="job-2-details">
                         <span class="title_name">Soyez réactif.</span>
                             <p class="text_montserrat">
                                 Sogilis est une société de services libérée basée à Grenoble proposant de l’expertise à ses clients autour de trois thématiques : développement de logiciels critiques et/ou certifiables, le développement Web / Cloud Native (micro-services, IaaS) et l’IOT. Nous intervenons sur toutes les phases d’un projet, à savoir de la caractérisation du besoin à l’industrialisation en passant par les preuves de concept.<br/><br/>
@@ -387,7 +387,7 @@
 
                         <br/><br/>
                          <span class="title_name">Comment postuler ?</span>
-                            <p class="text_montserrat">Par Email → CV + Lettre de motivation à grenoble.job@sogilis.com</p>
+                            <p class="text_montserrat">Par Email → CV + Lettre de motivation à grenoble.job@sogilis.com ou lyon.job@sogilis.com</p>
                         <br/><br/>
                     </div>
                 </div>
@@ -596,6 +596,9 @@
   </div>
 </footer>
 <script src="./js/scripts.js"></script>
-
+<script>
+  document.getElementById('job-1').addEventListener('click', () => toggleJobDetails('job-1'));
+  document.getElementById('job-2').addEventListener('click', () => toggleJobDetails('job-2'));
+</script>
     </body>
 </html>

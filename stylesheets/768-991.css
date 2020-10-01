@@ -1675,6 +1675,9 @@ textarea:focus {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+.jobs_zone_2 .element .panel.open {
+  max-height: none;
+}
 /* line 1647, ../sass/768-991.scss */
 .jobs_zone_2 .element .panel .text_montserrat {
   font-size: 0.9em;
