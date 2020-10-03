@@ -126,6 +126,11 @@ main {
   font-size: 2.0rem;
 }
 
+.title-30 {
+  font-size: 3.0rem;
+  font-weight: 600;
+}
+
 .font-wolf-blue-bold {
   font-size: 1.1rem;
   color: var(--wolf-blue);
