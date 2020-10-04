@@ -81,9 +81,12 @@ main {
   margin-top: calc(1.5em / 2 - 0.15rem);
 }
 
-.hyphendeco-title-small,
-.hyphendeco-title-small-textfollowing {
+.hyphendeco-title-small {
   margin-left: 1.56rem;
+}
+
+.hyphendeco-title-small-textfollowing {
+  margin-left: 2.56rem;
 }
 
 .hyphendeco-title-small::before {
@@ -100,9 +103,12 @@ main {
   width: 1.25rem;
 }
 
-.hyphendeco-title-big,
-.hyphendeco-title-big-textfollowing {
+.hyphendeco-title-big {
   margin-left: 2.25rem;
+}
+
+.hyphendeco-title-big-textfollowing {
+  margin-left: 3.25rem;
 }
 
 .hyphendeco-title-big::before {
@@ -120,6 +126,7 @@ main {
 
 .title-18 {
   font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .title-20 {
@@ -129,10 +136,21 @@ main {
 .title-30 {
   font-size: 3.0rem;
   font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
 .font-wolf-blue-bold {
   font-size: 1.1rem;
   color: var(--wolf-blue);
   font-weight: 700;
+}
+
+.text-description {
+  line-height: 1.8rem;
+}
+
+.maincolumn_center {
+  align-items: center;
+  align-content: center;
 }
