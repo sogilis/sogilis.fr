@@ -156,6 +156,7 @@ main {
   line-height: 1.8rem;
 }
 
-.contactus {
-  max-width: 13rem;
+/* TODO correct .btn-dark-grey into `shared.css` */
+.btn-dark-grey {
+  display: inline-block;
 }
