@@ -133,6 +133,12 @@ main {
   font-size: 2.0rem;
 }
 
+.title-25 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 3.125rem;
+}
+
 .title-30 {
   font-size: 3.0rem;
   font-weight: 600;
@@ -148,4 +154,8 @@ main {
 
 .text-description {
   line-height: 1.8rem;
+}
+
+.contactus {
+  max-width: 13rem;
 }
