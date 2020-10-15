@@ -1154,7 +1154,7 @@ textarea:focus{
 /**********************************************************************************************************************************************************/
 
 .content_purpose_1{
-	padding-top:200px;
+	padding-top:100px;
 
 	.title_level_1{
 		font-size:2.8em;
@@ -1298,9 +1298,12 @@ textarea:focus{
 		
 		.photo_verticale{
 			display:none;
+			position: absolute;
+			left: 90px;
+			}
 		}
 	}
-}
+
 
 .content_purpose_5{
 	margin-top:80px;
