@@ -799,7 +799,8 @@ textarea:focus{
 .about_zone_2{
 
 	margin-top:100px;
-
+	margin-bottom: 4em;
+	
 	.chiffre_1{
 		h1{
 			color:$light-electric-blue;
@@ -1289,17 +1290,12 @@ textarea:focus{
 		}
 	}
 
-	.photo_verticale{
-		width: 75%;
-	}
 
 	.second_content{
 		margin-top:80px;
 		
 		.photo_verticale{
 			display:none;
-			position: absolute;
-			left: 90px;
 			}
 		}
 	}
