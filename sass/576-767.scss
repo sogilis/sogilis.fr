@@ -1555,11 +1555,16 @@ textarea:focus{
 		    overflow: hidden;
 		    transition: max-height 0.2s ease-out;
 
+			&.open {
+				max-height: none;
+			}
+
 		    .text_montserrat{
 			    	font-size:0.9em;
 			    	color:$dark_grey;
 			    }
 		}
+
 	}
 }
 
