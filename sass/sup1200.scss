@@ -1282,6 +1282,12 @@ textarea:focus{
 		}
 	}
 
+	&__image {
+		img {
+			width: 100%;	
+		}
+	}
+
 	.second_content{
 		margin-top:80px;
 		}
@@ -1345,7 +1351,7 @@ textarea:focus{
 .quote_purpose{
 	h1{
 		font-size:1.5em;
-		padding-top:2em;
+		padding-top:3em;
 		text-align: justify;
 		text-align-last: center;
 	}
