@@ -1233,22 +1233,29 @@ textarea:focus{
 }
 
 .content_purpose_3{
-	.title_zone{
-		font-size:1.5em;
+	.purpose{
 		margin-left:30px;
 	}
 
-	.title_zone::before{
+	.purpose::before{
+      content: "";
 	    height: 4px;
 	    width: 18px;
 	    margin-left: -28px;
 	    margin-top: 13px;
+		background-color: $light-electric-blue;
+		position:absolute;
 	}
 
 	.text_description{
 		margin-left:40px;
-		font-size:0.8em;
+		font-size:0.9em;
 		line-height:1.8em;
+	}
+
+	ul {
+		color:$medium_grey;
+		list-style: url('../img/puce_list.svg');
 	}
 }
 

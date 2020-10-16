@@ -1286,16 +1286,16 @@ textarea:focus{
 }
 
 .content_purpose_3{
-	.title_zone{
-		font-size:1.2em;
-		margin-left:30px;
-	}
 
-	.title_zone::before{
-	    height: 4px;
-	    width: 18px;
-	    margin-left: -28px;
-	    margin-top: 10px;
+
+	.purpose::before{
+		content: "";
+		height: 4px;
+		width: 18px;
+		margin-left: -28px;
+		margin-top: 13px;
+		background-color: $light-electric-blue;
+		position:absolute;
 	}
 
 	.text_description{
@@ -1304,8 +1304,17 @@ textarea:focus{
 		line-height:1.5em;
 	}
 
+	.purpose{
+		margin-left:40px;
+	}
+
 	.num_2{
 		margin-top:10px;
+	}
+
+	ul {
+		color:$medium_grey;
+		list-style: url('../img/puce_list.svg');
 	}
 }
 
