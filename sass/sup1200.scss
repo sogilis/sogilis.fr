@@ -39,6 +39,7 @@ $dark_blue:#00446C;
 $wolf-blue:#016099;
 $medium-blue:#4EB2DD;
 $light-electric-blue:#A7E4EA;
+$light-grey-blue:#EDF5F5;
 
 
 
@@ -800,6 +801,7 @@ textarea:focus{
 .about_zone_2{
 
 	margin-top:100px;
+	margin-bottom: 4em;
 
 	.chiffre_1{
 		h1{
@@ -1146,7 +1148,7 @@ textarea:focus{
 /**********************************************************************************************************************************************************/
 
 .content_purpose_1{
-	padding-top:200px;
+	padding-top:100px;
 
 	.title_level_1{
 		font-size:2.8em;
@@ -1184,12 +1186,9 @@ textarea:focus{
 }
 
 .content_purpose_2{
-	background-color:$light-electric-blue;
-	box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-	moz-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-	webkit-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-	padding-top:60px;
-	padding-bottom:50px;
+	background-color:$light-grey-blue;
+	padding-top:20px;
+	padding-bottom:20px;
 	margin-bottom:80px;
 	margin-top:80px;
 
@@ -1197,9 +1196,17 @@ textarea:focus{
 		color:$wolf-blue;
 	}
 
+	h1{
+		font-size: 2em;
+	}
 	p{
 		margin-left:30px;
 		margin-top:30px;
+	}
+
+	.centre{
+		text-align: center;
+		text-align-last: center;
 	}
 
 	.title_zone::before{
@@ -1275,10 +1282,17 @@ textarea:focus{
 		}
 	}
 
+	&__image {
+		img {
+			width: 100%;	
+		}
+	}
+
 	.second_content{
 		margin-top:80px;
+		}
 	}
-}
+
 
 .content_purpose_5{
 	margin-top:80px;
@@ -1334,6 +1348,14 @@ textarea:focus{
 	}
 }
 
+.quote_purpose{
+	h1{
+		font-size:1.5em;
+		padding-top:3em;
+		text-align: justify;
+		text-align-last: center;
+	}
+}
 
 /**********************************************************************************************************************************************************/
 /* CLOUD NATIVE + CRITICAL PAGES */
