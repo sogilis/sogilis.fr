@@ -1394,15 +1394,16 @@ textarea:focus {
 /* line 1324, ../sass/576-767.scss */
 .about_zone_2 {
   margin-top: 60px;
+  margin-bottom: 4em;
 }
-/* line 1329, ../sass/576-767.scss */
+/* line 1330, ../sass/576-767.scss */
 .about_zone_2 .chiffre_1 h1 {
   color: #A7E4EA;
   font-size: 5em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-/* line 1336, ../sass/576-767.scss */
+/* line 1337, ../sass/576-767.scss */
 .about_zone_2 .chiffre_1 p {
   font-family: 'EB Garamond', serif;
   color: #707070;
@@ -1412,10 +1413,9 @@ textarea:focus {
   margin-top: -60px;
 }
 
-/* line 1347, ../sass/576-767.scss */
+/* line 1348, ../sass/576-767.scss */
 .about_zone_3 {
   margin-top: 20px;
-  margin-bottom: 4em;
 }
 /* line 1352, ../sass/576-767.scss */
 .about_zone_3 h1 {
