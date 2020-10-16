@@ -1818,6 +1818,11 @@ textarea:focus{
 		font-weight:300;
 	}
 }
+
 .dropdown-content-company {
 	margin-left: 60px;
+	
+	.bar-deco {
+		padding-right: 0;
+	}
 }
