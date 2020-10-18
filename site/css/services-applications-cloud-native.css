@@ -3,30 +3,28 @@
   --medium-margin: 3.75rem;
   --small-margin: 3.125rem;
 }
-#servicezone1 {
-  margin-bottom: var(--big-margin);
+
+#servicezone1-img_desktop_smartphone_cloud {
+  width: 65%;
 }
 
-#servicezone1-article1-img_desktop_smartphone_cloud {
-  width: 64%;
-}
-
-#servicezone1-article1-textzone {
+#servicezone1-textzone {
+  width: 35%;
   position: relative;
 }
 
-#servicezone1-article1-textzone-cloud {
+#servicezone1-textzone-cloudimg {
   height: 30%;
   position: absolute;
   margin-left: -4rem;
   margin-top: -1rem;
 }
 
-#servicezone1-article1-textzone-text {
+#servicezone1-textzone-text {
   margin-left: 10%;
 }
 
-#servicezone1-article1-textzone-text-h1 {
+#servicezone1-textzone-text-h1 {
   font-size: 1.1rem;
   font-weight: 400;
   font-family: var(--font-sans-serif);
@@ -34,37 +32,38 @@
   margin-top: 20%;
 }
 
-#servicezone1-article1-textzone-text-h2 {
+#servicezone1-textzone-text-h2 {
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--wolf-blue);
 }
 
-#servicezone1-article1-textzone-text-p {
+#servicezone1-textzone-text-p {
   color: var(--medium-grey);
   font-weight: 300;
 }
 
-#servicezone1-article2 {
+#servicezone2 {
   display: grid;
   padding-left: 4rem;
   grid-gap: 5%;
   width: 71%;
   grid-template-areas:
-    '.                              servicezone1-article2-section1 servicezone1-article2-section1 .'
-    'servicezone1-article2-section2 servicezone1-article2-section2 servicezone1-article2-section3 servicezone1-article2-section3';
+    'servicezone2-sectiontitle      .'
+    'servicezone2-sectionparagraph1 servicezone2-sectionparagraph2';
+  margin-bottom: var(--big-margin);
 }
 
-#servicezone1-article2-section1 {
-  grid-area: servicezone1-article2-section1;
+#servicezone2-sectiontitle {
+  grid-area: servicezone2-sectiontitle;
 }
 
-#servicezone1-article2-section2 {
-  grid-area: servicezone1-article2-section2;
+#servicezone2-sectionparagraph1 {
+  grid-area: servicezone2-sectionparagraph1;
 }
 
-#servicezone1-article2-section3 {
-  grid-area: servicezone1-article2-section3;
+#servicezone2-sectionparagraph2 {
+  grid-area: servicezone2-sectionparagraph2;
 }
 
 #servicezone3 {
