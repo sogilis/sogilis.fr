@@ -127,6 +127,7 @@ main {
 .title-18 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
+  line-height: 1.2;
 }
 
 .title-20 {
@@ -150,10 +151,6 @@ main {
   font-size: 1.1rem;
   color: var(--wolf-blue);
   font-weight: 700;
-}
-
-.text-description {
-  line-height: 1.8rem;
 }
 
 /* TODO correct .btn-dark-grey into `shared.css` */

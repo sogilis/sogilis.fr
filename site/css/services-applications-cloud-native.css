@@ -265,3 +265,31 @@
   /* TODO factorize with `.btn-dark-grey` */
   background-color: white;
 }
+
+#servicezone9 {
+  flex-direction: column;
+  padding: var(--big-margin) 0;
+}
+
+#servicezone9-title {
+  margin-left: 10%;
+  width: 45%;
+}
+
+#servicezone9-section {
+  display: flex;
+}
+
+#servicezone9-section-img,
+#servicezone9-section-text {
+  display: block;
+  width: 50%;
+}
+
+#servicezone9-section-text {
+  margin-left: 10%;
+}
+
+p {
+  line-height: 2;
+}
