@@ -315,21 +315,21 @@
     </div>
 </div>
 <div class="container p-5">
-    <h3>Candidatures spontanées</h3>
+    <h3>Candidature spontanée</h3>
     <br>
         <div class="form-group">
             <div class="row">
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputNom">Nom</label>
-                    <input type="text" class="form-control" id="inputNom" placeholder="Nom">
+                    <input type="text" class="form-control" id="inputNom" placeholder="Nom" required>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputPrenom">Prénom</label>
-                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom">
+                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputAdresse">Adresse email</label>
-                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email">
+                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email" required>
                 </div>
             </div>
         </div>
@@ -338,24 +338,24 @@
                 <div class="col-12 col-lg-2"><h1>Métiers :</h1></div>
                 <div class="checkbox col-12 col-md-6 col-lg-3 align-middle">
                     <label>
-                        <input type="checkbox" value="dev" id="checkbox_dev">
+                        <input type="checkbox" value="Dév.logiciel" id="checkbox_dev">
                         Dév. logiciel
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-2">
                     <label>
-                        <input type="checkbox" value="embarque" id="checkbox_embarque">
+                        <input type="checkbox" value="Embarqué" id="checkbox_embarque">
                         Embarqué
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="critique" id="checkbox_critique">
+                        <input type="checkbox" value="Critique/Normé" id="checkbox_critique">
                         Critique/Normé </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-2">
                     <label>
-                        <input type="checkbox" value="ux" id="checkbox_ux">
+                        <input type="checkbox" value="UX/UI" id="checkbox_ux">
                         UX/UI </label>
                 </div>
             </div>
@@ -386,7 +386,9 @@
                 <input type="file" id="lettreMotivationFile">
             </div>
         </div>
-    <button type="button" class="btn btn-default" id="submitBtn">Soumettre</button>
+    <button type="button" class="btn btn-outline-dark" id="submitBtn">Soumettre</button>
+    <div class="alert alert-success d-none" id="success" role="alert">Merci pour votre candidature !</div>
+    <div class="alert alert-warning d-none" id="warning" role="alert">Le formulaire est incomplet</div>
 </div>
 <footer>
     <div id="sofooter" class="maincolumn">
@@ -548,44 +550,48 @@
 <script src="./js/scripts.js"></script>
 <script>
     document.getElementById('submitBtn').addEventListener('click', () => {
+        let elt_postes = [
+            document.getElementById('checkbox_dev'),
+            document.getElementById('checkbox_embarque'),
+            document.getElementById('checkbox_critique'),
+            document.getElementById('checkbox_ux'),
+        ];
+
+        let postes = elt_postes.filter(function (elt) {
+            return elt.checked;
+        }).map(function (elt) {
+            return elt.value;
+        })
+
         const data = {
             nom: document.getElementById("inputNom").value,
             prenom: document.getElementById('inputPrenom').value,
             email: document.getElementById('inputAdresse').value,
-            postes: {
-                dev: document.getElementById('checkbox_dev').checked,
-                embarque: document.getElementById('checkbox_embarque').checked,
-                critique: document.getElementById('checkbox_critique').checked,
-                ux: document.getElementById('checkbox_ux').checked,
-            },
+            postes: postes,
             lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon": "Grenoble",
             message: document.getElementById("message").value,
             cv: document.getElementById("CvFile").files[0],
             lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
         };
 
-        const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkooj': 'https://formspree.io/f/xayloqqd';
-        // Tentative pour envoyer un fichier
-        // const formData = new FormData();
-        // formData.append("cv", data.cv);
-        // axios.post(url, formData, {
-        //         headers: {
-        //             'content-type': 'multipart/form-data'
-        //         }
-        // })
-        axios.post(url, data)
+        const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne': 'https://formspree.io/f/xoqpddka';
+
+        const formData = new FormData();
+        formData.append("Nom", data.nom);
+        formData.append("Prénom", data.prenom);
+        formData.append("Email", data.email);
+        formData.append("Postes", data.postes);
+        formData.append("Lieu", data.lieu);
+        formData.append("Message", data.message);
+        formData.append("CV", data.cv);
+        formData.append("Lettre de motivation", data.lettreMotivation);
+
+        axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then(function (response) {
-            // TODO: Confirmation à l'user que ça a fonctionné
-            console.log('OK', response);
-        })
-        .catch(function (error) {
-            // TODO: Informer l'user que ça a échoué
-            console.log('NOK', error);
+            document.getElementById("success").classList.remove("d-none").add("d-block");
+        }).catch(function (response) {
+            document.getElementById("warning").classList.remove("d-none").add("d-block");
         });
-
-        // TODO: ajouter des require aux champs du form necessaires
-
-
     });
 </script>
 </body>

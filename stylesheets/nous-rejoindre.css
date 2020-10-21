@@ -5,3 +5,8 @@ input {
   text-indent: 0;
   padding: 0;
 }
+
+/* line 8, ../sass/nous-rejoindre.scss */
+#success {
+  margin-top: 15px;
+}
