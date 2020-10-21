@@ -1,12 +1,45 @@
-/* line 1, ../sass/nous-rejoindre.scss */
-input {
-  border: none;
-  width: auto;
-  text-indent: 0;
-  padding: 0;
-}
-
-/* line 8, ../sass/nous-rejoindre.scss */
-#success {
+/* line 15, ../sass/nous-rejoindre.scss */
+.container-application {
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* line 19, ../sass/nous-rejoindre.scss */
+.container-application input[type=file] {
+  display: none;
+}
+/* line 23, ../sass/nous-rejoindre.scss */
+.container-application .container-application__message {
+  width: 100%;
+}
+/* line 27, ../sass/nous-rejoindre.scss */
+.container-application .container-application__file-input {
+  cursor: pointer;
+}
+/* line 31, ../sass/nous-rejoindre.scss */
+.container-application .container-application__failure,
+.container-application .container-application__success {
+  margin-top: 15px;
+}
+/* line 36, ../sass/nous-rejoindre.scss */
+.container-application .container-application__submit {
+  cursor: pointer;
+}
+/* line 41, ../sass/nous-rejoindre.scss */
+.container-application input[type=text], .container-application input[type=email], .container-application .container-application__file-input {
+  border: 3px solid #707070;
+  text-indent: 15px;
+  padding: 10px;
+  color: #707070;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 54, ../sass/nous-rejoindre.scss */
+.container-application input[type=text]:focus, .container-application input[type=email]:focus, .container-application .container-application__file-input:focus {
+  border: 3px solid #016099;
+  color: #016099;
 }

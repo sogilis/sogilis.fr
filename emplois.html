@@ -314,7 +314,7 @@
         </div>
     </div>
 </div>
-<div class="container p-5">
+<div class="container container-application">
     <h3>Candidature spontanée</h3>
     <br>
         <div class="form-group">
@@ -374,21 +374,42 @@
             </div>
         </div>
         <div class="form-group">
-            <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
+            <textarea id="message" rows="3" placeholder="Message" class="container-application__message"></textarea>
         </div>
         <div class="row">
-            <div class="form-group col-12  col-xl-5">
-                <label for="CvFile">CV </label>
-                <input type="file" id="CvFile">
+            <div class="form-group col-6">
+                <label
+                        class="container-application__file-input btn-dark-grey"
+                        onclick="getFile('cv')"
+                >
+                    <input type="file" id="CvFile" onchange="setFileName('cv', this)">
+                    Ajouter un CV
+                </label>
+                <span id="cv-filename"></span>
             </div>
-            <div class="form-group col-12  col-xl-7">
-                <label for="lettreMotivationFile">Lettre de motivation </label>
-                <input type="file" id="lettreMotivationFile">
+            <div class="form-group col-6">
+                <label
+                        class="container-application__file-input btn-dark-grey"
+                        onclick="getFile('lm')"
+                >
+                    <input type="file" id="lettreMotivationFile" onchange="setFileName('lm', this)">
+                    Ajouter une lettre de motivation
+                </label>
+                <span id="lm-filename"></span>
             </div>
         </div>
-    <button type="button" class="btn btn-outline-dark" id="submitBtn">Soumettre</button>
-    <div class="alert alert-success d-none" id="success" role="alert">Merci pour votre candidature !</div>
-    <div class="alert alert-warning d-none" id="warning" role="alert">Le formulaire est incomplet</div>
+    <button type="button" class="btn_dark_grey container-application__submit" id="submitBtn">
+        Soumettre
+        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0{fill:none;stroke-width:3;}
+                                </style>
+            <path id="Tracé_16" class="st0" d="M1.2,9.2l4.1-4.1L1.1,1.2"/>
+                                </svg>
+    </button>
+    <div class="alert alert-success d-none container-application__success" id="success" role="alert">Merci pour votre candidature !</div>
+    <div class="alert alert-warning d-none container-application__failure" id="warning" role="alert">Le formulaire est incomplet</div>
 </div>
 <footer>
     <div id="sofooter" class="maincolumn">
@@ -549,6 +570,26 @@
 </footer>
 <script src="./js/scripts.js"></script>
 <script>
+
+    function getFile(type) {
+        if(type === 'cv') {
+            document.getElementById("CvFile").click();
+        } else {
+            document.getElementById("lettreMotivationFile").click();
+        }
+    }
+
+    function setFileName(type, data) {
+        const file = data.value;
+        const fileName = file.split("\\");
+        const finalName = fileName[fileName.length - 1];
+
+        const elt_ID = type + "-filename";
+
+        document.getElementById(elt_ID).innerHTML = finalName;
+
+    }
+
     document.getElementById('submitBtn').addEventListener('click', () => {
         let elt_postes = [
             document.getElementById('checkbox_dev'),
