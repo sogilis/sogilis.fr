@@ -334,15 +334,21 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="row">
-                <div class="col-12 col-lg-2"><h1>Métiers :</h1></div>
+              <div class="row">
+                  <div class="col-12">
+                      <h1>
+                          Métiers :
+                      </h1>
+                  </div>
+              </div>
+                <div class="row">
                 <div class="checkbox col-12 col-md-6 col-lg-3 align-middle">
                     <label>
                         <input type="checkbox" value="Dév.logiciel" id="checkbox_dev">
                         Dév. logiciel
                     </label>
                 </div>
-                <div class="checkbox col-12 col-md-6 col-lg-2">
+                <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
                         <input type="checkbox" value="Embarqué" id="checkbox_embarque">
                         Embarqué
@@ -353,25 +359,32 @@
                         <input type="checkbox" value="Critique/Normé" id="checkbox_critique">
                         Critique/Normé </label>
                 </div>
-                <div class="checkbox col-12 col-md-6 col-lg-2">
+                <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
                         <input type="checkbox" value="UX/UI" id="checkbox_ux">
                         UX/UI </label>
                 </div>
-            </div>
+                </div>
         </div>
-        <div class="form-group form-inline">
-            <h1>Lieu :</h1>
-            <div class="radio col-5">
+        <div class="form-group">
+            <div class="row">
+              <div class="col-12">
+                  <h1>Lieu :</h1>
+              </div>
+            </div>
+          <div class="row">
+
+            <div class="radio col-6">
                 <label>
                     <input type="radio" name="lieu" value="Lyon">
                     Lyon </label>
             </div>
-            <div class="radio  col-5">
+            <div class="radio  col-6">
                 <label>
                     <input type="radio" name="lieu" value="Grenoble">
                     Grenoble </label>
             </div>
+          </div>
         </div>
         <div class="form-group">
             <textarea id="message" rows="3" placeholder="Message" class="container-application__message"></textarea>
@@ -408,8 +421,30 @@
             <path id="Tracé_16" class="st0" d="M1.2,9.2l4.1-4.1L1.1,1.2"/>
                                 </svg>
     </button>
-    <div class="alert alert-success d-none container-application__success" id="success" role="alert">Merci pour votre candidature !</div>
-    <div class="alert alert-warning d-none container-application__failure" id="warning" role="alert">Le formulaire est incomplet</div>
+    <div
+            class="
+                alert
+                alert-success
+                d-none
+                container-application__success
+            "
+            id="success"
+            role="alert"
+    >
+        Merci pour votre candidature !
+    </div>
+    <div
+            class="
+                alert
+                alert-danger
+                d-none
+                container-application__failure
+            "
+            id="failure"
+            role="alert"
+    >
+        Un problème est survenu... Si l'erreur persiste, merci d'envoyer votre candidature à grenoble@sogilis.com ou lyon@sogilis.com
+    </div>
 </div>
 <footer>
     <div id="sofooter" class="maincolumn">
@@ -629,9 +664,9 @@
 
         axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then(function (response) {
-            document.getElementById("success").classList.remove("d-none").add("d-block");
+            document.getElementById("success").classList.remove("d-none");
         }).catch(function (response) {
-            document.getElementById("warning").classList.remove("d-none").add("d-block");
+            document.getElementById("failure").classList.remove("d-none");
         });
     });
 </script>

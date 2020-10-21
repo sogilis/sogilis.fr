@@ -1,20 +1,10 @@
 
-
-$super-light-grey2:#FCFCFC;
-$super-light-grey: #F9F9F9;
-$light-grey:#D3D3D3;
 $medium-grey:#707070;
-$dark_grey:#282E36;
-$sub_medium_grey:#666666;
-
-$dark_blue:#00446C;
 $wolf-blue:#016099;
-$medium-blue:#4EB2DD;
-$light-electric-blue:#A7E4EA;
-$light-grey-blue:#EDF5F5;
+
 .container-application {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 45px;
 
   input[type=file] {
     display: none;
@@ -37,8 +27,15 @@ $light-grey-blue:#EDF5F5;
     cursor: pointer;
   }
 
+  input[type=checkbox],
+  input[type=radio] {
+    width: auto;
+  }
 
-  input[type=text], input[type=email], .container-application__file-input {
+
+  input[type=text],
+  input[type=email],
+  .container-application__file-input {
     border:3px solid $medium_grey;
     text-indent:15px;
     padding:10px;
