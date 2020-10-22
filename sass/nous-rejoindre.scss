@@ -19,6 +19,12 @@ $wolf-blue:#016099;
   margin-top: 15px;
   margin-bottom: 45px;
 
+  .container-application__required {
+    font-size: 13px;
+    color: red;
+    display: none;
+  }
+
   input[type=file] {
     display: none;
   }
