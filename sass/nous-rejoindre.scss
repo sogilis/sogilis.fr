@@ -42,7 +42,12 @@ $wolf-blue:#016099;
     margin-top: 15px;
   }
 
-  .container-application__submit {
+  .container-application__submit-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .container-application__submit-container__btn {
     cursor: pointer;
   }
 
@@ -72,5 +77,10 @@ $wolf-blue:#016099;
       border: 3px solid $wolf-blue;
       color:$wolf-blue;
     }
+  }
+
+  .container-application__file-input {
+    font-size: 12px;
+    padding: 8px;
   }
 }
