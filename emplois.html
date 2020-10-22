@@ -314,54 +314,58 @@
         </div>
     </div>
 </div>
-<div class="container container-application">
+<div class="container container-application needs-validation">
     <h3>Candidature spontanée</h3>
     <br>
         <div class="form-group">
             <div class="row">
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputNom">Nom</label>
-                    <input type="text" class="form-control" id="inputNom" placeholder="Nom" required>
+                    <input type="text" class="form-control" id="inputNom" placeholder="Nom*" required>
+                    <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputPrenom">Prénom</label>
-                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom" required>
+                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom*" required>
+                    <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputAdresse">Adresse email</label>
-                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email" required>
+                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email*" required>
+                    <span class="container-application__required">Merci de fournir une adresse valide</span>
                 </div>
             </div>
         </div>
         <div class="form-group">
               <div class="row">
                   <div class="col-12">
-                      <h1>
-                          Métiers :
-                      </h1>
+                      <h5>
+                          Métiers* :
+                      </h5>
+                      <span class="container-application__required container-application__checkbox-validation">Merci d'en choisir au moins un</span>
                   </div>
               </div>
                 <div class="row">
                 <div class="checkbox col-12 col-md-6 col-lg-3 align-middle">
                     <label>
-                        <input type="checkbox" value="Dév.logiciel" id="checkbox_dev">
+                        <input type="checkbox" value="Dév.logiciel" id="checkbox_dev" name="job">
                         Dév. logiciel
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="Embarqué" id="checkbox_embarque">
+                        <input type="checkbox" value="Embarqué" id="checkbox_embarque" name="job">
                         Embarqué
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="Critique/Normé" id="checkbox_critique">
+                        <input type="checkbox" value="Critique/Normé" id="checkbox_critique" name="job">
                         Critique/Normé </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="UX/UI" id="checkbox_ux">
+                        <input type="checkbox" value="UX/UI" id="checkbox_ux" name="job">
                         UX/UI </label>
                 </div>
                 </div>
@@ -369,20 +373,19 @@
         <div class="form-group">
             <div class="row">
               <div class="col-12">
-                  <h1>Lieu :</h1>
+                  <h5>Lieu :</h5>
               </div>
             </div>
           <div class="row">
-
             <div class="radio col-6">
                 <label>
-                    <input type="radio" name="lieu" value="Lyon">
-                    Lyon </label>
+               <input type="radio" name="lieu" value="Grenoble" checked>
+                Grenoble </label>
             </div>
             <div class="radio  col-6">
                 <label>
-                    <input type="radio" name="lieu" value="Grenoble">
-                    Grenoble </label>
+                    <input type="radio" name="lieu" value="Lyon">
+                    Lyon </label>
             </div>
           </div>
         </div>
@@ -411,7 +414,7 @@
                 <span id="lm-filename"></span>
             </div>
         </div>
-    <button type="button" class="btn_dark_grey container-application__submit" id="submitBtn">
+    <button type="submit" class="btn_dark_grey container-application__submit" id="submitBtn">
         Soumettre
         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
@@ -625,7 +628,33 @@
 
     }
 
+    function checkVal() {
+        let isValid = true;
+        const elts = document.getElementsByClassName("form-control");
+
+        for(let elt of elts) {
+            if(!elt.checkValidity()) {
+                elt.nextElementSibling.style = "display: block";
+                isValid = false;
+            } else {
+                elt.nextElementSibling.style = "display: none";
+            }
+        }
+
+        const checkboxes = document.querySelectorAll("input[name='job']:checked");
+        if(checkboxes.length === 0) {
+            document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: block";
+            isValid = false;
+        } else {
+            document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: none";
+        }
+        return isValid;
+    }
+
     document.getElementById('submitBtn').addEventListener('click', () => {
+        if(checkVal()) {
+
+
         let elt_postes = [
             document.getElementById('checkbox_dev'),
             document.getElementById('checkbox_embarque'),
@@ -662,12 +691,13 @@
         formData.append("CV", data.cv);
         formData.append("Lettre de motivation", data.lettreMotivation);
 
-        axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-        .then(function (response) {
-            document.getElementById("success").classList.remove("d-none");
-        }).catch(function (response) {
-            document.getElementById("failure").classList.remove("d-none");
-        });
+        // axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+        // .then(function (response) {
+        //     document.getElementById("success").classList.remove("d-none");
+        // }).catch(function (response) {
+        //     document.getElementById("failure").classList.remove("d-none");
+        // });
+        }
     });
 </script>
 </body>
