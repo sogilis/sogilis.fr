@@ -1,35 +1,51 @@
 /* line 5, ../sass/nous-rejoindre.scss */
+.droite {
+  margin-left: 25%;
+}
+
+/* line 9, ../sass/nous-rejoindre.scss */
+.just {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* line 14, ../sass/nous-rejoindre.scss */
+.space_quote {
+  margin-top: 1rem;
+}
+
+/* line 18, ../sass/nous-rejoindre.scss */
 .container-application {
   margin-top: 15px;
   margin-bottom: 45px;
 }
-/* line 9, ../sass/nous-rejoindre.scss */
+/* line 22, ../sass/nous-rejoindre.scss */
 .container-application input[type=file] {
   display: none;
 }
-/* line 13, ../sass/nous-rejoindre.scss */
+/* line 26, ../sass/nous-rejoindre.scss */
 .container-application .container-application__message {
   width: 100%;
 }
-/* line 17, ../sass/nous-rejoindre.scss */
+/* line 30, ../sass/nous-rejoindre.scss */
 .container-application .container-application__file-input {
   cursor: pointer;
 }
-/* line 21, ../sass/nous-rejoindre.scss */
+/* line 34, ../sass/nous-rejoindre.scss */
 .container-application .container-application__failure,
 .container-application .container-application__success {
   margin-top: 15px;
 }
-/* line 26, ../sass/nous-rejoindre.scss */
+/* line 39, ../sass/nous-rejoindre.scss */
 .container-application .container-application__submit {
   cursor: pointer;
 }
-/* line 30, ../sass/nous-rejoindre.scss */
+/* line 43, ../sass/nous-rejoindre.scss */
 .container-application input[type=checkbox],
 .container-application input[type=radio] {
   width: auto;
 }
-/* line 36, ../sass/nous-rejoindre.scss */
+/* line 49, ../sass/nous-rejoindre.scss */
 .container-application input[type=text],
 .container-application input[type=email],
 .container-application .container-application__file-input {
@@ -44,8 +60,9 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  border-radius: 0;
 }
-/* line 51, ../sass/nous-rejoindre.scss */
+/* line 65, ../sass/nous-rejoindre.scss */
 .container-application input[type=text]:focus,
 .container-application input[type=email]:focus,
 .container-application .container-application__file-input:focus {

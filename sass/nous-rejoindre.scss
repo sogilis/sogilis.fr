@@ -2,6 +2,19 @@
 $medium-grey:#707070;
 $wolf-blue:#016099;
 
+.droite{
+  margin-left: 25%;
+}
+
+.just{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.space_quote{
+  margin-top: 1rem;
+}
+
 .container-application {
   margin-top: 15px;
   margin-bottom: 45px;
@@ -47,6 +60,7 @@ $wolf-blue:#016099;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    border-radius: 0;
 
     &:focus {
       border: 3px solid $wolf-blue;
