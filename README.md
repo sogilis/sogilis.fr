@@ -1,6 +1,5 @@
 # sogilis.fr
 
-
 French Sogilis website
 
 ### Main Structure
