@@ -691,12 +691,12 @@
         formData.append("CV", data.cv);
         formData.append("Lettre de motivation", data.lettreMotivation);
 
-        // axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-        // .then(function (response) {
-        //     document.getElementById("success").classList.remove("d-none");
-        // }).catch(function (response) {
-        //     document.getElementById("failure").classList.remove("d-none");
-        // });
+        axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+        .then(function (response) {
+            document.getElementById("success").classList.remove("d-none");
+        }).catch(function (response) {
+            document.getElementById("failure").classList.remove("d-none");
+        });
         }
     });
 </script>
