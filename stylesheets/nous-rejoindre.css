@@ -1,62 +1,65 @@
 /* line 5, ../sass/nous-rejoindre.scss */
-.droite {
-  margin-left: 25%;
-}
-
-/* line 9, ../sass/nous-rejoindre.scss */
 .just {
   text-align: justify;
   text-justify: inter-word;
 }
 
-/* line 14, ../sass/nous-rejoindre.scss */
+/* line 10, ../sass/nous-rejoindre.scss */
 .space_quote {
   margin-top: 1rem;
 }
 
-/* line 18, ../sass/nous-rejoindre.scss */
+/* line 14, ../sass/nous-rejoindre.scss */
+.legende {
+  color: #016099;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* line 21, ../sass/nous-rejoindre.scss */
 .container-application {
   margin-top: 15px;
   margin-bottom: 45px;
 }
-/* line 22, ../sass/nous-rejoindre.scss */
+/* line 25, ../sass/nous-rejoindre.scss */
 .container-application .container-application__required {
   font-size: 13px;
   color: red;
   display: none;
 }
-/* line 28, ../sass/nous-rejoindre.scss */
+/* line 31, ../sass/nous-rejoindre.scss */
 .container-application input[type=file] {
   display: none;
 }
-/* line 32, ../sass/nous-rejoindre.scss */
+/* line 35, ../sass/nous-rejoindre.scss */
 .container-application .container-application__message {
   width: 100%;
 }
-/* line 36, ../sass/nous-rejoindre.scss */
+/* line 39, ../sass/nous-rejoindre.scss */
 .container-application .container-application__file-input {
   cursor: pointer;
 }
-/* line 40, ../sass/nous-rejoindre.scss */
+/* line 43, ../sass/nous-rejoindre.scss */
 .container-application .container-application__failure,
 .container-application .container-application__success {
   margin-top: 15px;
 }
-/* line 45, ../sass/nous-rejoindre.scss */
+/* line 48, ../sass/nous-rejoindre.scss */
 .container-application .container-application__submit-container {
   display: flex;
   justify-content: end;
 }
-/* line 50, ../sass/nous-rejoindre.scss */
+/* line 53, ../sass/nous-rejoindre.scss */
 .container-application .container-application__submit-container__btn {
   cursor: pointer;
 }
-/* line 54, ../sass/nous-rejoindre.scss */
+/* line 57, ../sass/nous-rejoindre.scss */
 .container-application input[type=checkbox],
 .container-application input[type=radio] {
   width: auto;
 }
-/* line 60, ../sass/nous-rejoindre.scss */
+/* line 63, ../sass/nous-rejoindre.scss */
 .container-application input[type=text],
 .container-application input[type=email],
 .container-application .container-application__file-input {
@@ -73,14 +76,14 @@
   transition: all 0.3s;
   border-radius: 0;
 }
-/* line 76, ../sass/nous-rejoindre.scss */
+/* line 79, ../sass/nous-rejoindre.scss */
 .container-application input[type=text]:focus,
 .container-application input[type=email]:focus,
 .container-application .container-application__file-input:focus {
   border: 3px solid #016099;
   color: #016099;
 }
-/* line 82, ../sass/nous-rejoindre.scss */
+/* line 85, ../sass/nous-rejoindre.scss */
 .container-application .container-application__file-input {
   font-size: 12px;
   padding: 8px;

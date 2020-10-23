@@ -2,10 +2,6 @@
 $medium-grey:#707070;
 $wolf-blue:#016099;
 
-.droite{
-  margin-left: 25%;
-}
-
 .just{
   text-align: justify;
   text-justify: inter-word;
@@ -13,6 +9,13 @@ $wolf-blue:#016099;
 
 .space_quote{
   margin-top: 1rem;
+}
+
+.legende{
+  color:$wolf-blue;
+  font-family: 'Montserrat', sans-serif;
+  font-size:1em;
+  font-weight:700;
 }
 
 .container-application {
