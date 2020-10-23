@@ -1316,62 +1316,6 @@ textarea:focus{
 		}
 	}
 
-
-.content_purpose_5{
-	margin-top:80px;
-
-
-	.are_you_ready{
-		background-color:$wolf-blue;
-		padding-top:100px;
-		padding-bottom:100px;
-		padding-left:100px;
-		box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-		moz-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-		webkit-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-
-		.title_level_1{
-			color:white;
-			font-size:3em;
-			font-weight:600;
-		}
-
-		.title_level_1::after{
-			content: '';
-		    display: block;
-		    height: 13px;
-		    width: 100%;
-		    background-color: $light-electric-blue;
-		    margin-top: -18px;
-		    margin-left: 131px;
-		}
-
-		.text_description{
-			color:white;
-			margin-top:30px;
-			line-height:2em;
-			margin-left:40px;
-			font-size:0.8em;
-		}
-	}
-
-	.techno_logo{
-		margin-top: -113px;
-		margin-bottom:80px;
-	    background-color: white;
-	    padding-top: 61px;
-	    padding-bottom: 60px;
-	    padding-left: 57px;
-		box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-		moz-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-		webkit-box-shadow:0 0 19px 0px rgba(0, 0, 0, 0.1);
-
-		img{
-			width:250px;
-		}
-	}
-}
-
 .quote_purpose{
 	h1{
 		font-size:1.5em;
