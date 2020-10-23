@@ -18,48 +18,53 @@
 }
 
 /* line 21, ../sass/nous-rejoindre.scss */
+.content_purpose_2 {
+  margin-bottom: 0;
+}
+
+/* line 25, ../sass/nous-rejoindre.scss */
 .container-application {
   margin-top: 15px;
   margin-bottom: 45px;
 }
-/* line 25, ../sass/nous-rejoindre.scss */
+/* line 29, ../sass/nous-rejoindre.scss */
 .container-application .container-application__required {
   font-size: 13px;
   color: red;
   display: none;
 }
-/* line 31, ../sass/nous-rejoindre.scss */
+/* line 35, ../sass/nous-rejoindre.scss */
 .container-application input[type=file] {
   display: none;
 }
-/* line 35, ../sass/nous-rejoindre.scss */
+/* line 39, ../sass/nous-rejoindre.scss */
 .container-application .container-application__message {
   width: 100%;
 }
-/* line 39, ../sass/nous-rejoindre.scss */
+/* line 43, ../sass/nous-rejoindre.scss */
 .container-application .container-application__file-input {
   cursor: pointer;
 }
-/* line 43, ../sass/nous-rejoindre.scss */
+/* line 47, ../sass/nous-rejoindre.scss */
 .container-application .container-application__failure,
 .container-application .container-application__success {
   margin-top: 15px;
 }
-/* line 48, ../sass/nous-rejoindre.scss */
+/* line 52, ../sass/nous-rejoindre.scss */
 .container-application .container-application__submit-container {
   display: flex;
   justify-content: end;
 }
-/* line 53, ../sass/nous-rejoindre.scss */
+/* line 57, ../sass/nous-rejoindre.scss */
 .container-application .container-application__submit-container__btn {
   cursor: pointer;
 }
-/* line 57, ../sass/nous-rejoindre.scss */
+/* line 61, ../sass/nous-rejoindre.scss */
 .container-application input[type=checkbox],
 .container-application input[type=radio] {
   width: auto;
 }
-/* line 63, ../sass/nous-rejoindre.scss */
+/* line 67, ../sass/nous-rejoindre.scss */
 .container-application input[type=text],
 .container-application input[type=email],
 .container-application .container-application__file-input {
@@ -76,14 +81,14 @@
   transition: all 0.3s;
   border-radius: 0;
 }
-/* line 79, ../sass/nous-rejoindre.scss */
+/* line 83, ../sass/nous-rejoindre.scss */
 .container-application input[type=text]:focus,
 .container-application input[type=email]:focus,
 .container-application .container-application__file-input:focus {
   border: 3px solid #016099;
   color: #016099;
 }
-/* line 85, ../sass/nous-rejoindre.scss */
+/* line 89, ../sass/nous-rejoindre.scss */
 .container-application .container-application__file-input {
   font-size: 12px;
   padding: 8px;
