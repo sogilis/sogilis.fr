@@ -11,7 +11,10 @@
     @media (min-width: $breakpoint-m) {
       padding: 3em;
     }
-
+    
+    .text_description{
+      font-size: 1em;
+    }
     .just{
       text-align: justify;
       text-justify: inter-word;
