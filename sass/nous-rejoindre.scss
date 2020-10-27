@@ -101,6 +101,10 @@
     .container-application__file-input {
       font-size: 12px;
       padding: 8px;
+
+      &:hover {
+        color: white;
+      }
     }
   }
   
@@ -125,11 +129,11 @@
   
     &__quote {
       padding: 1em;
-        margin: 0 1em;
-          @media (min-width: $breakpoint-m) {
-            margin: 0;
-            padding: 0px;
-          }
+      margin: 0 1em;
+        @media (min-width: $breakpoint-m) {
+          margin: 0;
+          padding: 0px;
+        }
     }
   }
 
