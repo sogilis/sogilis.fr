@@ -129,14 +129,14 @@
 }
 /* line 130, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_3__quote {
-  padding: 1em;
-  margin: 0 1em 2em;
+  padding: O 1em 0 1em;
+  margin: 1em 0 2em 0;
 }
 @media (min-width: 48em) {
   /* line 130, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_3__quote {
     margin: 0;
-    padding: 0px;
+    padding: 0;
   }
 }
 /* line 141, ../sass/nous-rejoindre.scss */

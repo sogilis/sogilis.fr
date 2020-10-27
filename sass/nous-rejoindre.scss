@@ -128,11 +128,11 @@
     }
   
     &__quote {
-      padding: 1em;
-      margin: 0 1em 2em;
+      padding: O 1em 0 1em;
+      margin: 1em 0 2em 0;
         @media (min-width: $breakpoint-m) {
           margin: 0;
-          padding: 0px;
+          padding: 0;
         }
     }
   }
