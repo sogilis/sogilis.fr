@@ -1,0 +1,169 @@
+.nous-rejoindre {
+  $breakpoint-m: 48em;
+  $breakpoint-l: 75em;
+  $medium-grey:#707070;
+  $wolf-blue:#016099;
+
+  .content_purpose_2 {
+    margin: 2em 0;
+    padding: 2em;
+
+    @media (min-width: $breakpoint-m) {
+      padding: 3em;
+    }
+    
+    .text_description{
+      font-size: 1em;
+    }
+    .just{
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 0;
+      padding-bottom: 1em;
+    
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  
+  .liste{
+    padding-top: 3em;
+    color:$wolf-blue;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .container-application {
+    margin-top: 15px;
+    margin-bottom: 45px;
+  
+    .container-application__required {
+      font-size: 13px;
+      color: red;
+      display: none;
+    }
+  
+    input[type=file] {
+      display: none;
+    }
+  
+    .container-application__message {
+      width: 100%;
+    }
+    
+    .container-application__file-input {
+      cursor: pointer;
+    }
+  
+    .container-application__failure,
+    .container-application__success {
+      margin-top: 15px;
+    }
+  
+    .container-application__submit-container {
+      display: flex;
+      justify-content: end;
+    }
+  
+    .container-application__submit-container__btn {
+      cursor: pointer;
+    }
+  
+    input[type=checkbox],
+    input[type=radio] {
+      width: auto;
+    }
+  
+  
+    input[type=text],
+    input[type=email],
+    .container-application__file-input {
+      border:3px solid $medium_grey;
+      text-indent:15px;
+      padding:10px;
+      color:$medium_grey;
+      font-size:16px;
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight:500;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      border-radius: 0;
+  
+      &:focus {
+        border: 3px solid $wolf-blue;
+        color:$wolf-blue;
+      }
+    }
+  
+    .container-application__file-input {
+      font-size: 12px;
+      padding: 8px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  
+  .jobs_zone_3 {
+    &__videos-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 1em;
+      width: 100%;
+      padding: 0 1em;
+      margin-bottom: 2em;
+  
+      @media (min-width: $breakpoint-m) {
+        grid-template-columns:repeat(2, 1fr);
+        padding: 0;
+      }
+  
+      @media (min-width: $breakpoint-l) {
+        grid-template-columns:repeat(3, 1fr)
+      }
+    }
+  
+    &__quote {
+      padding: 0 1em;
+      margin: 0 0 1em;
+
+      @media (min-width: $breakpoint-m) {
+        padding: 0;
+      }
+    }
+  }
+
+  .jobs_zone_2 {
+    &__legendes {
+      width: 100%;  
+    }
+
+    &__legende{
+      color:$wolf-blue;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7em;
+      font-weight: 700;
+      padding: 0;
+  
+      @media (min-width: $breakpoint-m) {
+        font-size: 1em;
+      }
+
+      &:nth-child(3) {
+        padding-left: 3em;
+      }
+  
+      &:last-child {
+        padding-left: 3em;
+
+        @media (min-width: $breakpoint-m) {
+          padding-left: 5.5em;
+        }
+      }
+    }
+  }
+}
