@@ -124,7 +124,12 @@
     }
   
     &__quote {
-      margin-bottom: 2em;
+      padding: 1em;
+        margin: 0 1em;
+          @media (min-width: $breakpoint-m) {
+            margin: 0;
+            padding: 0px;
+          }
     }
   }
 

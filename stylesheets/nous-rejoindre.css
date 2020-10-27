@@ -125,13 +125,21 @@
 }
 /* line 126, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_3__quote {
-  margin-bottom: 2em;
+  padding: 1em;
+  margin: 0 1em;
 }
-/* line 132, ../sass/nous-rejoindre.scss */
+@media (min-width: 48em) {
+  /* line 126, ../sass/nous-rejoindre.scss */
+  .nous-rejoindre .jobs_zone_3__quote {
+    margin: 0;
+    padding: 0px;
+  }
+}
+/* line 137, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legendes {
   width: 100%;
 }
-/* line 136, ../sass/nous-rejoindre.scss */
+/* line 141, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende {
   color: #016099;
   font-family: 'Montserrat', sans-serif;
@@ -140,21 +148,21 @@
   padding: 0;
 }
 @media (min-width: 48em) {
-  /* line 136, ../sass/nous-rejoindre.scss */
+  /* line 141, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_2__legende {
     font-size: 1em;
   }
 }
-/* line 147, ../sass/nous-rejoindre.scss */
+/* line 152, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende:nth-child(3) {
   padding-left: 3em;
 }
-/* line 151, ../sass/nous-rejoindre.scss */
+/* line 156, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende:last-child {
   padding-left: 3em;
 }
 @media (min-width: 48em) {
-  /* line 151, ../sass/nous-rejoindre.scss */
+  /* line 156, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_2__legende:last-child {
     padding-left: 5.5em;
   }
