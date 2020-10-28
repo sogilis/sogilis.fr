@@ -659,7 +659,8 @@
             return isValid;
         }
 
-        document.getElementById('submitBtn').addEventListener('click', () => {
+        document.getElementById('submitBtn').addEventListener('click', (event) => {
+            event.preventDefault();
             console.log(grecaptcha)
             console.log(grecaptcha.getResponse())
             if (checkVal()) {
