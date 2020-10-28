@@ -326,7 +326,7 @@
             </div>
         </div>
     </div>
-    <form data-parsley-validate class="container container-application needs-validation">
+    <form id="formulaire" data-parsley-validate class="container container-application needs-validation">
         <h3>Candidature spontanée</h3>
         <br>
         <div class="form-group">
@@ -390,10 +390,8 @@
                 <div class="radio col-12 col-md-6 col-lg-3">
                     <label>
                         <input type="radio" name="lieu" value="Grenoble" checked>
-                        Grenoble </label>
-                </div>
-                <div class="radio col-12 col-md-6 col-lg-3">
-                    <label>
+                        event.preventDefault();
+                        <label>
                         <input type="radio" name="lieu" value="Lyon">
                         Lyon </label>
                 </div>
@@ -617,6 +615,10 @@
     <script src="./js/scripts.js"></script>
     <script>
 
+        var form = document.getElementById("formulaire");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
+
         function getFile(type) {
             if (type === 'cv') {
                 document.getElementById("CvFile").click();
@@ -660,7 +662,6 @@
         }
 
         document.getElementById('submitBtn').addEventListener('click', (event) => {
-            event.preventDefault();
             console.log(grecaptcha)
             console.log(grecaptcha.getResponse())
             if (checkVal()) {
