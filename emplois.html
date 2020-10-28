@@ -663,50 +663,55 @@
             console.log(grecaptcha)
             console.log(grecaptcha.getResponse())
             if (checkVal()) {
+                var response = grecaptcha.getResponse();
+                if (response.length == 0) {
+                    break;
+                }
+                else {
+                    let elt_postes = [
+                        document.getElementById('checkbox_dev'),
+                        document.getElementById('checkbox_embarque'),
+                        document.getElementById('checkbox_critique'),
+                        document.getElementById('checkbox_ux'),
+                    ];
 
+                    let postes = elt_postes.filter(function (elt) {
+                        return elt.checked;
+                    }).map(function (elt) {
+                        return elt.value;
+                    })
 
-                let elt_postes = [
-                    document.getElementById('checkbox_dev'),
-                    document.getElementById('checkbox_embarque'),
-                    document.getElementById('checkbox_critique'),
-                    document.getElementById('checkbox_ux'),
-                ];
+                    const data = {
+                        nom: document.getElementById("inputNom").value,
+                        prenom: document.getElementById('inputPrenom').value,
+                        email: document.getElementById('inputAdresse').value,
+                        postes: postes,
+                        lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon" : "Grenoble",
+                        message: document.getElementById("message").value,
+                        cv: document.getElementById("CvFile").files[0],
+                        lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
+                    };
 
-                let postes = elt_postes.filter(function (elt) {
-                    return elt.checked;
-                }).map(function (elt) {
-                    return elt.value;
-                })
+                    //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
+                    const url = 'https://formspree.io/f/xzbkgbov';
+                    const formData = new FormData();
+                    formData.append("Nom", data.nom);
+                    formData.append("Prénom", data.prenom);
+                    formData.append("Email", data.email);
+                    formData.append("Postes", data.postes);
+                    formData.append("Lieu", data.lieu);
+                    formData.append("Message", data.message);
+                    formData.append("CV", data.cv);
+                    formData.append("Lettre de motivation", data.lettreMotivation);
+                    formData.append('g-recaptcha-response', data.captcha)
 
-                const data = {
-                    nom: document.getElementById("inputNom").value,
-                    prenom: document.getElementById('inputPrenom').value,
-                    email: document.getElementById('inputAdresse').value,
-                    postes: postes,
-                    lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon" : "Grenoble",
-                    message: document.getElementById("message").value,
-                    cv: document.getElementById("CvFile").files[0],
-                    lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-                };
-
-                const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-
-                const formData = new FormData();
-                formData.append("Nom", data.nom);
-                formData.append("Prénom", data.prenom);
-                formData.append("Email", data.email);
-                formData.append("Postes", data.postes);
-                formData.append("Lieu", data.lieu);
-                formData.append("Message", data.message);
-                formData.append("CV", data.cv);
-                formData.append("Lettre de motivation", data.lettreMotivation);
-
-                axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-                    .then(function (response) {
-                        document.getElementById("success").classList.remove("d-none");
-                    }).catch(function (response) {
-                        document.getElementById("failure").classList.remove("d-none");
-                    });
+                    axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                        .then(function (response) {
+                            document.getElementById("success").classList.remove("d-none");
+                        }).catch(function (response) {
+                            document.getElementById("failure").classList.remove("d-none");
+                        });
+                }
             }
         });
     </script>
