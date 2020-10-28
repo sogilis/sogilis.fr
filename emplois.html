@@ -35,7 +35,8 @@
         type="text/css" />
 
     <link rel="icon" type="image/png" href="./img/favicon.png" />
-
+    <script src="jquery.js"></script>
+    <script src="parsley.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -325,7 +326,7 @@
             </div>
         </div>
     </div>
-    <div class="container container-application needs-validation">
+    <form data-parsley-validate class="container container-application needs-validation">
         <h3>Candidature spontanée</h3>
         <br>
         <div class="form-group">
@@ -333,17 +334,14 @@
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputNom">Nom</label>
                     <input type="text" class="form-control" id="inputNom" placeholder="Nom*" required>
-                    <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputPrenom">Prénom</label>
                     <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom*" required>
-                    <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputAdresse">Adresse email</label>
                     <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email*" required>
-                    <span class="container-application__required">Merci de fournir une adresse valide</span>
                 </div>
             </div>
         </div>
@@ -357,7 +355,7 @@
                         choisir au moins un</span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-parsley-check="[1, 2]">
                 <div class="checkbox col-12 col-md-6 col-lg-3 align-middle">
                     <label>
                         <input type="checkbox" value="Dév.logiciel" id="checkbox_dev" name="job">
@@ -461,7 +459,7 @@
             Un problème est survenu... Si l'erreur persiste, merci d'envoyer votre candidature à grenoble@sogilis.com ou
             lyon@sogilis.com
         </div>
-    </div>
+    </form>
     <footer>
         <div id="sofooter" class="maincolumn">
             <section id="footer-logo">
