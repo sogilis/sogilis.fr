@@ -294,13 +294,18 @@
                         <p class="text_montserrat">Une idée, un projet, un problème ?<br>Nous sommes à votre écoute pour trouver avec vous la meilleure solution.</p>
 
                         <form id="formulaire">
-                            <input type="email" name="email" placeholder="Votre email" required>
-                          <textarea name="message" placeholder="Votre message" required></textarea>
+                            <input type="email" name="email" placeholder="Votre email*" required>
+                          <textarea name="message" placeholder="Votre message*" required></textarea>
                           <div class="contact__captcha-container">
                             <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
                             <span class="contact__required" id="captcha-error">
                               Merci de prouver que vous n'êtes pas un robot
                             </span>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text_description">
+                              * Champs obligatoires
+                            </div>
                           </div>
                           <button type="submit" class="btn_dark_grey">Envoyer le message
                             <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
