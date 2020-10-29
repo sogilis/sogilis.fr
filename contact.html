@@ -296,9 +296,9 @@
                         <form id="formulaire">
                             <input type="email" name="email" placeholder="Votre email" required>
                           <textarea name="message" placeholder="Votre message" required></textarea>
-                          <div class="container-application__captcha-container">
+                          <div class="contact__captcha-container">
                             <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
-                            <span class="container-application__required" id="captcha-error">
+                            <span class="contact__required" id="captcha-error">
                               Merci de prouver que vous n'êtes pas un robot
                             </span>
                           </div>
@@ -312,6 +312,30 @@
                                 </svg>
                         </button>
                         </form>
+                      <div
+                              class="
+                                alert
+                                alert-success
+                                d-none
+                                container-application__success
+                              "
+                              id="success"
+                              role="alert"
+                      >
+                        Votre message a été correctement transmis, nous le traiterons dans les meilleurs délais
+                      </div>
+                      <div
+                              class="
+                                alert
+                                alert-danger
+                                d-none
+                                container-application__failure
+                              "
+                              id="failure"
+                              role="alert"
+                      >
+                        Un problème est survenu... Si l'erreur persiste, merci d'envoyer un email à contact@sogilis.com
+                      </div>
                     </div>
                 </div>
 
@@ -541,26 +565,39 @@
 </footer>
 <script src="./js/scripts.js"></script>
     <script>
-      $('#formulaire').submit(function(e) {
-          e.preventDefault();
+        function isCaptchaOk() {
+            const captchaResponse = grecaptcha.getResponse();
+            const isCaptchaOk = captchaResponse.length !== 0;
 
-          const data = {
-              email: $("#formulaire input[type=email]").val(),
-              message: $("#formulaire textarea").val(),
-              "g-recaptcha-response": grecaptcha.getResponse(),
-          };
+            if(!isCaptchaOk) {
+                document.getElementById("captcha-error").style = "display: block";
+            } else {
+                document.getElementById("captcha-error").style = "display: none";
+            }
 
-          const url = "https://formspree.io/f/myybjzbz";
+            return isCaptchaOk;
+        }
 
-          console.log(data)
+        $('#formulaire').submit(function(e) {
+            e.preventDefault();
 
-          axios.post(url, data)
-            .then(function (response) {
-                console.log('OK')
-            }).catch(function (error) {
-                console.log('NOK')
-            });
-      });
+            const data = {
+                email: $("#formulaire input[type=email]").val(),
+                message: $("#formulaire textarea").val(),
+                "g-recaptcha-response": grecaptcha.getResponse(),
+            };
+
+            const url = "https://formspree.io/f/myybjzbz";
+
+            if(isCaptchaOk()) {
+                axios.post(url, data)
+                    .then(function (response) {
+                        document.getElementById("success").classList.remove("d-none");
+                    }).catch(function (error) {
+                        document.getElementById("failure").classList.remove("d-none");
+                    });
+            }
+        });
     </script>
 
     </body>
