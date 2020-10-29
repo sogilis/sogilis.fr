@@ -669,9 +669,7 @@
                     captcha: grecaptcha.getResponse(),
                 };
 
-                // TODO !!!!!
-                // const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-                const url = 'https://formspree.io/f/xzbkgbov';
+                const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
 
                 const formData = new FormData();
                 formData.append("Nom", data.nom);
