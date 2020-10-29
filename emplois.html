@@ -421,6 +421,15 @@
         </div>
         <div class="row">
             <div class="col-12 text_description">
+                <label>
+                    <input type="checkbox" id="checkbox_consent" required>
+                    J'accepte que ces données soient enregistrées par Sogilis à des fin de recrutement.*
+                    <a href="mentions-legal.html#gestion-donnees">En savoir plus</a>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text_description">
                 * Champs obligatoires
             </div>
         </div>
@@ -614,10 +623,12 @@
             return isValid;
         }
 
+        function isConsentAccepted() {
+            return document.getElementById("checkbox_consent").checkValidity();
+        }
+
         document.getElementById('submitBtn').addEventListener('click', () => {
-            if (checkVal()) {
-
-
+            if (checkVal() && isConsentAccepted()) {
                 let elt_postes = [
                     document.getElementById('checkbox_dev'),
                     document.getElementById('checkbox_embarque'),
