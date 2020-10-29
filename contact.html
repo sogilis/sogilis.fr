@@ -36,7 +36,15 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
+
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174646886-1"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script
+              src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+              integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+              crossorigin="anonymous"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -286,14 +294,22 @@
                     <div class="col-12 col-md-10 col-lg-8  offset-lg-2">
                         <p class="text_montserrat">Une idée, un projet, un problème ?<br>Nous sommes à votre écoute pour trouver avec vous la meilleure solution.</p>
 
-                        <form method="POST" action="https://formspree.io/nicolas@sogilis.com">
-                            <input type="email" name="email" placeholder="Your email">
-                            <textarea name="message" placeholder="Your message"></textarea>
-                            <div class="p-md-2">
-                              <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
+                        <form id="formulaire">
+                            <input type="email" name="email" placeholder="Votre email*" required>
+                          <textarea name="message" placeholder="Votre message*" required></textarea>
+                          <div class="contact__captcha-container">
+                            <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
+                            <span class="contact__required" id="captcha-error">
+                              Merci de prouver que vous n'êtes pas un robot
+                            </span>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text_description">
+                              * Champs obligatoires
                             </div>
-                            <button type="submit" class="btn_dark_grey">Envoyer le message
-                                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          </div>
+                          <button type="submit" class="btn_dark_grey">Envoyer le message
+                            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
                                 <style type="text/css">
                                     .st0{fill:none;stroke-width:3;}
@@ -302,6 +318,30 @@
                                 </svg>
                         </button>
                         </form>
+                      <div
+                              class="
+                                alert
+                                alert-success
+                                d-none
+                                container-application__success
+                              "
+                              id="success"
+                              role="alert"
+                      >
+                        Votre message a été correctement transmis, nous le traiterons dans les meilleurs délais
+                      </div>
+                      <div
+                              class="
+                                alert
+                                alert-danger
+                                d-none
+                                container-application__failure
+                              "
+                              id="failure"
+                              role="alert"
+                      >
+                        Un problème est survenu... Si l'erreur persiste, merci d'envoyer un email à contact@sogilis.com
+                      </div>
                     </div>
                 </div>
 
@@ -516,69 +556,6 @@
         </p>
       </div>
     </section>
-
-    <section id="footer-services">
-      <div class="title-1 bar-deco">Services</div>
-      <ul class="footer-nav">
-        <li class="footer-nav-li">
-          <a
-            href="./services-applications-cloud-native.html"
-            class="footer-nav-a"
-          >
-            Applications Cloud Natives
-          </a
-          >
-        </li>
-        <li class="footer-nav-li">
-          <a
-            href="./services-embarques-et-iot.html"
-            class="footer-nav-a"
-          >
-            Logiciels Embarqués &amp; IoT
-          </a
-          >
-        </li>
-        <li class="footer-nav-li">
-          <a
-            href="./services-logiciels-critiques.html"
-            class="footer-nav-a"
-          >
-            Logiciels Critiques
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="footer-company">
-      <div class="title-1 bar-deco">L&#39;Entreprise</div>
-      <ul class="footer-nav">
-        <li class="footer-nav-li">
-          <a
-            href="./vision.html"
-            class="footer-nav-a"
-          >
-            Notre Vision
-          </a>
-        </li>
-        <li class="footer-nav-li">
-          <a
-            href="./emplois.html"
-            class="footer-nav-a"
-          >
-            Emplois
-          </a>
-        </li>
-        <li class="footer-nav-li">
-          <a
-            href="https://blog.sogilis.fr/"
-            class="footer-nav-a"
-          >
-            Blog
-          </a>
-        </li>
-      </ul>
-    </section>
-
     <hr id="footer-hr" />
 
     <section id="footer-subfooter">
@@ -593,6 +570,41 @@
   </div>
 </footer>
 <script src="./js/scripts.js"></script>
+    <script>
+        function isCaptchaOk() {
+            const captchaResponse = grecaptcha.getResponse();
+            const isCaptchaOk = captchaResponse.length !== 0;
+
+            if(!isCaptchaOk) {
+                document.getElementById("captcha-error").style = "display: block";
+            } else {
+                document.getElementById("captcha-error").style = "display: none";
+            }
+
+            return isCaptchaOk;
+        }
+
+        $('#formulaire').submit(function(e) {
+            e.preventDefault();
+
+            const data = {
+                email: $("#formulaire input[type=email]").val(),
+                message: $("#formulaire textarea").val(),
+                "g-recaptcha-response": grecaptcha.getResponse(),
+            };
+
+            const url = "https://formspree.io/f/myybjzbz";
+
+            if(isCaptchaOk()) {
+                axios.post(url, data)
+                    .then(function (response) {
+                        document.getElementById("success").classList.remove("d-none");
+                    }).catch(function (error) {
+                    document.getElementById("failure").classList.remove("d-none");
+                });
+            }
+        });
+    </script>
 
     </body>
 </html>

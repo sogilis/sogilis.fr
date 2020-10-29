@@ -44,8 +44,15 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174646886-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -429,8 +436,23 @@
         </div>
         <div class="row">
             <div class="col-12 text_description">
+                <label>
+                    <input type="checkbox" id="checkbox_consent" required>
+                    J'accepte que ces données soient enregistrées par Sogilis à des fin de recrutement.*
+                    <a href="mentions-legal.html#gestion-donnees">En savoir plus</a>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text_description">
                 * Champs obligatoires
             </div>
+        </div>
+        <div class="container-application__captcha-container">
+            <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
+            <span class="container-application__required" id="captcha-error">
+                Merci de prouver que vous n'êtes pas un robot
+            </span>
         </div>
         <div class="container-application__submit-container">
             <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
@@ -570,49 +592,6 @@
                     </p>
                 </div>
             </section>
-
-            <section id="footer-services">
-                <div class="title-1 bar-deco">Services</div>
-                <ul class="footer-nav">
-                    <li class="footer-nav-li">
-                        <a href="./services-applications-cloud-native.html" class="footer-nav-a">
-                            Applications Cloud Natives
-                        </a>
-                    </li>
-                    <li class="footer-nav-li">
-                        <a href="./services-embarques-et-iot.html" class="footer-nav-a">
-                            Logiciels Embarqués &amp; IoT
-                        </a>
-                    </li>
-                    <li class="footer-nav-li">
-                        <a href="./services-logiciels-critiques.html" class="footer-nav-a">
-                            Logiciels Critiques
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="footer-company">
-                <div class="title-1 bar-deco">L&#39;Entreprise</div>
-                <ul class="footer-nav">
-                    <li class="footer-nav-li">
-                        <a href="./vision.html" class="footer-nav-a">
-                            Notre Vision
-                        </a>
-                    </li>
-                    <li class="footer-nav-li">
-                        <a href="./emplois.html" class="footer-nav-a">
-                            Emplois
-                        </a>
-                    </li>
-                    <li class="footer-nav-li">
-                        <a href="https://blog.sogilis.fr/" class="footer-nav-a">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
             <hr id="footer-hr" />
 
             <section id="footer-subfooter">
@@ -649,86 +628,50 @@
 
         }
 
-        // function checkVal() {
-        //     let isValid = true;
-        //     const elts = document.getElementsByClassName("form-control");
+        function areValuesOk() {
+            let isValid = true;
+            const elts = document.getElementsByClassName("form-control");
 
-        //     for (let elt of elts) {
-        //         if (!elt.checkValidity()) {
-        //             elt.nextElementSibling.style = "display: block";
-        //             isValid = false;
-        //         } else {
-        //             elt.nextElementSibling.style = "display: none";
-        //         }
-        //     }
+            for (let elt of elts) {
+                if (!elt.checkValidity()) {
+                    elt.nextElementSibling.style = "display: block";
+                    isValid = false;
+                } else {
+                    elt.nextElementSibling.style = "display: none";
+                }
+            }
 
-        //     const checkboxes = document.querySelectorAll("input[name='job']:checked");
-        //     if (checkboxes.length === 0) {
-        //         document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: block";
-        //         isValid = false;
-        //     } else {
-        //         document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: none";
-        //     }
-        //     return isValid;
-        // }
+            const checkboxes = document.querySelectorAll("input[name='job']:checked");
+            if (checkboxes.length === 0) {
+                document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: block";
+                isValid = false;
+            } else {
+                document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: none";
+            }
+            return isValid;
+        }
 
-        // document.getElementById('submitBtn').addEventListener('click', () => {
-        //     console.log(grecaptcha)
-        //     console.log(grecaptcha.getResponse())
-        //     if (checkVal()) {
-        //         var response = grecaptcha.getResponse();
-        //         if (response.length == 0) {
-        //             break;
-        //         }
-        //         else {
-        //             let elt_postes = [
-        //                 document.getElementById('checkbox_dev'),
-        //                 document.getElementById('checkbox_embarque'),
-        //                 document.getElementById('checkbox_critique'),
-        //                 document.getElementById('checkbox_ux'),
-        //             ];
+        function isCaptchaOk() {
+            const captchaResponse = grecaptcha.getResponse();
+            const isCaptchaOk = captchaResponse.length !== 0;
 
-        //             let postes = elt_postes.filter(function (elt) {
-        //                 return elt.checked;
-        //             }).map(function (elt) {
-        //                 return elt.value;
-        //             })
+            if(!isCaptchaOk) {
+                document.getElementById("captcha-error").style = "display: block";
+            } else {
+                document.getElementById("captcha-error").style = "display: none";
+            }
 
-        //             const data = {
-        //                 nom: document.getElementById("inputNom").value,
-        //                 prenom: document.getElementById('inputPrenom').value,
-        //                 email: document.getElementById('inputAdresse').value,
-        //                 postes: postes,
-        //                 lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon" : "Grenoble",
-        //                 message: document.getElementById("message").value,
-        //                 cv: document.getElementById("CvFile").files[0],
-        //                 lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-                        
-        //             };
+            return isCaptchaOk;
+        }
 
-        //             //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-        //             const url = 'https://formspree.io/f/xzbkgbov';
-        //             const formData = new FormData();
-        //             formData.append("Nom", data.nom);
-        //             formData.append("Prénom", data.prenom);
-        //             formData.append("Email", data.email);
-        //             formData.append("Postes", data.postes);
-        //             formData.append("Lieu", data.lieu);
-        //             formData.append("Message", data.message);
-        //             formData.append("CV", data.cv);
-        //             formData.append("Lettre de motivation", data.lettreMotivation);
-        //             formData.append('g-recaptcha-response', data.captcha)
+        function isConsentAccepted() {
+            return document.getElementById("checkbox_consent").checkValidity();
+        }
 
-        //             axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-        
-        $('#formulaire').submit(function(e) {
+        $("#formulaire").submit(function(e) {
             e.preventDefault();
 
-            const captchaResponse = grecaptcha.getResponse();
-            const isCaptchaOk = captchaResponse.length === 0;
-            //const areValuesOk = checkVal();
-             //let areValuesOk = $('#formulaire').isValid();
-            if(isCaptchaOk && false) {
+            if (areValuesOk() && isConsentAccepted() && isCaptchaOk()) {
                 let elt_postes = [
                     document.getElementById('checkbox_dev'),
                     document.getElementById('checkbox_embarque'),
@@ -751,7 +694,7 @@
                     message: document.getElementById("message").value,
                     cv: document.getElementById("CvFile").files[0],
                     lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-                    captcha: captchaResponse,
+                    captcha: grecaptcha.getResponse(),
                 };
 
                 //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
@@ -766,14 +709,14 @@
                 formData.append("Message", data.message);
                 formData.append("CV", data.cv);
                 formData.append("Lettre de motivation", data.lettreMotivation);
-                formData.append('g-recaptcha-response', data.captcha)
+                formData.append("g-recaptcha-response", data.captcha);
 
                 axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
                         .then(function (response) {
                             document.getElementById("success").classList.remove("d-none");
                         }).catch(function (response) {
-                    document.getElementById("failure").classList.remove("d-none");
-                });
+                            document.getElementById("failure").classList.remove("d-none");
+                        });
             }
 
             console.log(captchaResponse, captchaResponse.length === 0);

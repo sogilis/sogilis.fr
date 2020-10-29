@@ -1782,3 +1782,15 @@ textarea:focus{
 .content_purpose_1__img-1 {
 	width: 100%;
 }
+
+.contact__required {
+	font-size: 13px;
+	color: red;
+	display: none;
+}
+
+.contact__captcha-container {
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+}
