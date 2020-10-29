@@ -38,6 +38,12 @@
 
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174646886-1"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script
+              src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+              integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+              crossorigin="anonymous"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -287,9 +293,9 @@
                     <div class="col-12 col-md-10 col-lg-8  offset-lg-2">
                         <p class="text_montserrat">Une idée, un projet, un problème ?<br>Nous sommes à votre écoute pour trouver avec vous la meilleure solution.</p>
 
-                        <form method="POST" action="https://formspree.io/f/myybjzbz">
-                            <input type="email" name="email" placeholder="Your email">
-                          <textarea name="message" placeholder="Your message"></textarea>
+                        <form id="formulaire">
+                            <input type="email" name="email" placeholder="Votre email" required>
+                          <textarea name="message" placeholder="Votre message" required></textarea>
                           <div class="container-application__captcha-container">
                             <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
                             <span class="container-application__required" id="captcha-error">
@@ -534,6 +540,28 @@
   </div>
 </footer>
 <script src="./js/scripts.js"></script>
+    <script>
+      $('#formulaire').submit(function(e) {
+          e.preventDefault();
+
+          const data = {
+              email: $("#formulaire input[type=email]").val(),
+              message: $("#formulaire textarea").val(),
+              "g-recaptcha-response": grecaptcha.getResponse(),
+          };
+
+          const url = "https://formspree.io/f/myybjzbz";
+
+          console.log(data)
+
+          axios.post(url, data)
+            .then(function (response) {
+                console.log('OK')
+            }).catch(function (error) {
+                console.log('NOK')
+            });
+      });
+    </script>
 
     </body>
 </html>
