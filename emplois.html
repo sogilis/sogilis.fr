@@ -431,8 +431,11 @@
                 * Champs obligatoires
             </div>
         </div>
-        <div class="container-application__submit-container">
+        <div class="container-application__captcha-container">
             <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
+            <span class="container-application__required" id="captcha-error">
+                Merci de prouver que vous n'êtes pas un robot
+            </span>
         </div>
         <div class="container-application__submit-container">
             <button type="submit" class="btn_dark_grey container-application__submit-container__btn" id="submitBtn">
@@ -601,7 +604,7 @@
 
         }
 
-        function checkVal() {
+        function areValuesOk() {
             let isValid = true;
             const elts = document.getElementsByClassName("form-control");
 
@@ -624,15 +627,23 @@
             return isValid;
         }
 
-        // document.getElementById('submitBtn').addEventListener('click', () => {
+        function isCaptchaOk() {
+            const captchaResponse = grecaptcha.getResponse();
+            const isCaptchaOk = captchaResponse.length !== 0;
+
+            if(!isCaptchaOk) {
+                document.getElementById("captcha-error").style = "display: block";
+            } else {
+                document.getElementById("captcha-error").style = "display: none";
+            }
+
+            return isCaptchaOk;
+        }
+
         $("#formulaire").submit(function(e) {
             e.preventDefault();
 
-            const captchaResponse = grecaptcha.getResponse();
-            const isCaptchaOk = captchaResponse.length !== 0;
-            const areValuesOk = checkVal();
-
-            if (isCaptchaOk && areValuesOk) {
+            if (isCaptchaOk() && areValuesOk()) {
                 let elt_postes = [
                     document.getElementById('checkbox_dev'),
                     document.getElementById('checkbox_embarque'),
@@ -655,7 +666,7 @@
                     message: document.getElementById("message").value,
                     cv: document.getElementById("CvFile").files[0],
                     lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-                    captcha: captchaResponse,
+                    captcha: grecaptcha.getResponse(),
                 };
 
                 // TODO !!!!!
