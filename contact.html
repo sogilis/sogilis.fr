@@ -35,6 +35,8 @@
         <link rel="icon" type="image/png" href="./img/favicon.png"/>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
+
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174646886-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -285,11 +287,17 @@
                     <div class="col-12 col-md-10 col-lg-8  offset-lg-2">
                         <p class="text_montserrat">Une idée, un projet, un problème ?<br>Nous sommes à votre écoute pour trouver avec vous la meilleure solution.</p>
 
-                        <form method="POST" action="https://formspree.io/nicolas@sogilis.com">
+                        <form method="POST" action="https://formspree.io/f/myybjzbz">
                             <input type="email" name="email" placeholder="Your email">
-                            <textarea name="message" placeholder="Your message"></textarea>
-                            <button type="submit" class="btn_dark_grey">Envoyer le message
-                                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          <textarea name="message" placeholder="Your message"></textarea>
+                          <div class="container-application__captcha-container">
+                            <div class="g-recaptcha" data-sitekey="6Ld5WdwZAAAAAMgQiI_wqvTChkK5FIPZOvjaLyd8"></div>
+                            <span class="container-application__required" id="captcha-error">
+                              Merci de prouver que vous n'êtes pas un robot
+                            </span>
+                          </div>
+                          <button type="submit" class="btn_dark_grey">Envoyer le message
+                            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 7.5 10.3" style="enable-background:new 0 0 7.5 10.3;" xml:space="preserve">
                                 <style type="text/css">
                                     .st0{fill:none;stroke-width:3;}
