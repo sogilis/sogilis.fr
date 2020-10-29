@@ -643,7 +643,7 @@
         $("#formulaire").submit(function(e) {
             e.preventDefault();
 
-            if (isCaptchaOk() && areValuesOk()) {
+            if (areValuesOk() && isCaptchaOk()) {
                 let elt_postes = [
                     document.getElementById('checkbox_dev'),
                     document.getElementById('checkbox_embarque'),
