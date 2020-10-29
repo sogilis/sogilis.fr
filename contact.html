@@ -592,10 +592,8 @@
             if(isCaptchaOk()) {
                 axios.post(url, data)
                     .then(function (response) {
-                        document.getElementById("failure").style = "display: none";
                         document.getElementById("success").classList.remove("d-none");
                     }).catch(function (error) {
-                    document.getElementById("success").style = "display: none";
                     document.getElementById("failure").classList.remove("d-none");
                 });
             }
