@@ -624,29 +624,6 @@
 
         }
 
-        // function areValuesOk() {
-        //     let isValid = true;
-        //     const elts = document.getElementsByClassName("form-control");
-
-        //     for (let elt of elts) {
-        //         if (!elt.checkValidity()) {
-        //             elt.nextElementSibling.style = "display: block";
-        //             isValid = false;
-        //         } else {
-        //             elt.nextElementSibling.style = "display: none";
-        //         }
-        //     }
-
-        //     const checkboxes = document.querySelectorAll("input[name='job']:checked");
-        //     if (checkboxes.length === 0) {
-        //         document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: block";
-        //         isValid = false;
-        //     } else {
-        //         document.getElementsByClassName("container-application__checkbox-validation")[0].style = "display: none";
-        //     }
-        //     return isValid;
-        // }
-
         function isCaptchaOk() {
             const captchaResponse = grecaptcha.getResponse();
             const isCaptchaOk = captchaResponse.length !== 0;
@@ -694,9 +671,9 @@
                         captcha: grecaptcha.getResponse(),
                     };
 
-                    //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
+                    const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
                     // TODO: Remove this, only for dev purpose
-                    const url = 'https://formspree.io/f/xzbkgbov';
+                    //const url = 'https://formspree.io/f/xzbkgbov';
                     const formData = new FormData();
                     formData.append("Nom", data.nom);
                     formData.append("Prénom", data.prenom);
@@ -717,62 +694,6 @@
                 }
             })
         });
-
-
-        // $("#formulaire").submit(function(e) {
-        //     e.preventDefault();
-
-
-        //     if (areValuesOk() && isConsentAccepted() && isCaptchaOk()) {
-        //         let elt_postes = [
-        //             document.getElementById('checkbox_dev'),
-        //             document.getElementById('checkbox_embarque'),
-        //             document.getElementById('checkbox_critique'),
-        //             document.getElementById('checkbox_ux'),
-        //         ];
-
-        //         let postes = elt_postes.filter(function (elt) {
-        //             return elt.checked;
-        //         }).map(function (elt) {
-        //             return elt.value;
-        //         })
-
-        //         const data = {
-        //             nom: document.getElementById("inputNom").value,
-        //             prenom: document.getElementById('inputPrenom').value,
-        //             email: document.getElementById('inputAdresse').value,
-        //             postes: postes,
-        //             lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon" : "Grenoble",
-        //             message: document.getElementById("message").value,
-        //             cv: document.getElementById("CvFile").files[0],
-        //             lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-        //             captcha: grecaptcha.getResponse(),
-        //         };
-
-        //         //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-        //         // TODO: Remove this, only for dev purpose
-        //         const url = 'https://formspree.io/f/xzbkgbov';
-        //         const formData = new FormData();
-        //         formData.append("Nom", data.nom);
-        //         formData.append("Prénom", data.prenom);
-        //         formData.append("Email", data.email);
-        //         formData.append("Postes", data.postes);
-        //         formData.append("Lieu", data.lieu);
-        //         formData.append("Message", data.message);
-        //         formData.append("CV", data.cv);
-        //         formData.append("Lettre de motivation", data.lettreMotivation);
-        //         formData.append("g-recaptcha-response", data.captcha);
-
-        //         axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-        //                 .then(function (response) {
-        //                     document.getElementById("success").classList.remove("d-none");
-        //                 }).catch(function (response) {
-        //                     document.getElementById("failure").classList.remove("d-none");
-        //                 });
-        //     }
-
-        //     console.log(captchaResponse, captchaResponse.length === 0);
-        // })
     </script>
 </body>
 
