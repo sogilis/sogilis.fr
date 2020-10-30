@@ -596,8 +596,9 @@
             if(isCaptchaOk()) {
                 const fetchOptions = {
                     method: "POST",
-                    body: JSON.parse(data),
-                }
+                    body: data,
+                };
+
                 fetch(url, fetchOptions)
                     .then(function (response) {
                         document.getElementById("success").classList.remove("d-none");
