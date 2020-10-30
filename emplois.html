@@ -677,7 +677,13 @@
                     formData.append("Lettre de motivation", data.lettreMotivation);
                     formData.append("g-recaptcha-response", data.captcha);
 
-                    axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                    const fetchOptions = {
+                        method: "POST",
+                        headers: { 'Content-Type': 'multipart/form-data' },
+                        body: formData,
+                    }
+
+                    fetch(url, fetchOptions)
                         .then(function (response) {
                             document.getElementById("success").classList.remove("d-none");
                         }).catch(function (response) {
