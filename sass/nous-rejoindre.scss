@@ -3,15 +3,17 @@
   $breakpoint-l: 75em;
   $medium-grey:#707070;
   $wolf-blue:#016099; 
+  $succes: #468847;
+  $failure: #B94A48;
   
 
   .parsley-success {
-    color: #468847;
+    color: $succes;
     background-color: #DFF0D8;
     border: 1px solid #D6E9C6;
   }
   .parsley-error {
-    color: #B94A48;
+    color: $failure;
     background-color: #F2DEDE;
     border: 1px solid #EED3D7;
   }

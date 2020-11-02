@@ -582,7 +582,8 @@
             return isCaptchaOk;
         }
 
-        $('#formulaire').submit(function(e) {
+
+        document.getElementById('formulaire').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const data = {
