@@ -2,7 +2,21 @@
   $breakpoint-m: 48em;
   $breakpoint-l: 75em;
   $medium-grey:#707070;
-  $wolf-blue:#016099;
+  $wolf-blue:#016099; 
+  $succes: #468847;
+  $failure: #B94A48;
+  
+
+  .parsley-success {
+    color: $succes;
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+  }
+  .parsley-error {
+    color: $failure;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+  }
 
   .content_purpose_2 {
     margin: 2em 0;
@@ -62,8 +76,16 @@
     }
   
     .container-application__submit-container {
+      margin-top: 1em;
       display: flex;
       justify-content: end;
+    }
+
+    .container-application__captcha-container {
+      display: flex;
+      margin-top:1em;
+      flex-direction: column;
+      align-items: end;
     }
   
     .container-application__submit-container__btn {
