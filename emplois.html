@@ -671,9 +671,9 @@
                         captcha: grecaptcha.getResponse(),
                     };
 
-                    const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-                    // TODO: Remove this, only for dev purpose
-                    //const url = 'https://formspree.io/f/xzbkgbov';
+                    //const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
+                    //TODO: Remove this, only for dev purpose
+                    const url = 'https://formspree.io/f/xzbkgbov';
                     const formData = new FormData();
                     formData.append("Nom", data.nom);
                     formData.append("Prénom", data.prenom);
