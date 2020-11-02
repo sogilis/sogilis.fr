@@ -329,16 +329,37 @@
             <div class="row">
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputNom">Nom</label>
-                    <input type="text" class="form-control" id="inputNom" placeholder="Nom*" required="">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="inputNom"
+                            placeholder="Nom*"
+                            name="Nom"
+                            required=""
+                    >
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputPrenom">Prénom</label>
-                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom*" required="">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="inputPrenom"
+                            placeholder="Prénom*"
+                            name="Prénom"
+                            required=""
+                    >
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputAdresse">Adresse email</label>
-                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email*"
-                        data-parsley-trigger="change" required="">
+                    <input
+                            type="email"
+                            class="form-control"
+                            id="inputAdresse"
+                            placeholder="Adresse email*"
+                            data-parsley-trigger="change"
+                            required=""
+                            name="Email"
+                    >
                 </div>
             </div>
         </div>
@@ -355,26 +376,48 @@
             <div class="row" id="error-data">
                 <div class="checkbox col-12 col-md-6 col-lg-3 align-middle">
                     <label>
-                        <input type="checkbox" value="Dév.logiciel" id="checkbox_dev" name="job[]"
-                            data-parsley-mincheck="1" required="" data-parsley-class-handler="#error-data"
-                            data-parsley-errors-container="#error-data">
+                        <input
+                                type="checkbox"
+                                value="Dév.logiciel"
+                                id="checkbox_dev"
+                                name="job[]"
+                                data-parsley-mincheck="1"
+                                required=""
+                                data-parsley-class-handler="#error-data"
+                                data-parsley-errors-container="#error-data"
+                        >
                         Dév. logiciel
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="Embarqué" id="checkbox_embarque" name="job[]">
+                        <input
+                                type="checkbox"
+                                value="Embarqué"
+                                id="checkbox_embarque"
+                                name="job[]"
+                        >
                         Embarqué
                     </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="Critique/Normé" id="checkbox_critique" name="job[]">
+                        <input
+                                type="checkbox"
+                                value="Critique/Normé"
+                                id="checkbox_critique"
+                                name="job[]"
+                        >
                         Critique/Normé </label>
                 </div>
                 <div class="checkbox col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="checkbox" value="UX/UI" id="checkbox_ux" name="job[]">
+                        <input
+                                type="checkbox"
+                                value="UX/UI"
+                                id="checkbox_ux"
+                                name="job[]"
+                        >
                         UX/UI </label>
                 </div>
             </div>
@@ -388,33 +431,63 @@
             <div class="row">
                 <div class="radio col-12 col-md-6 col-lg-3">
                     <label>
-                        <input type="radio" name="lieu" value="Grenoble" checked>
+                        <input
+                                type="radio"
+                                name="Lieu"
+                                value="Grenoble"
+                                checked
+                        >
                         Grenoble
                         <label>
-                            <input type="radio" name="lieu" value="Lyon">
+                            <input
+                                    type="radio"
+                                    name="Lieu"
+                                    value="Lyon"
+                            >
                             Lyon </label>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <textarea id="message" rows="3" placeholder="Message" data-parsley-trigger="keyup"
-                data-parsley-minlength="20" data-parsley-maxlength="1000"
-                class="container-application__message"></textarea>
+            <textarea
+                    id="message"
+                    rows="3"
+                    placeholder="Message"
+                    data-parsley-trigger="keyup"
+                    data-parsley-minlength="20"
+                    data-parsley-maxlength="1000"
+                    class="container-application__message"
+                    name="Message"
+            ></textarea>
         </div>
         <div class="row">
             <div class="form-group col-12 col-md-6 col-lg-3" id="but-cv">
                 <label class="container-application__file-input btn-dark-grey" onclick="getFile('cv')">
-                    <input type="file" id="CvFile" onchange="setFileName('cv', this)" required=""
-                        data-parsley-class-handler="#but-cv" data-parsley-errors-container="#but-cv">
+                    <input
+                            type="file"
+                            id="CvFile"
+                            onchange="setFileName('cv', this)"
+                            required=""
+                            data-parsley-class-handler="#but-cv"
+                            data-parsley-errors-container="#but-cv"
+                            name="CV"
+                    >
                     Ajouter un CV*
                 </label>
                 <span id="cv-filename"></span>
             </div>
             <div class="form-group col-12 col-md-6 col-lg-3" id="but-motiv">
                 <label class="container-application__file-input btn-dark-grey" onclick="getFile('lm')">
-                    <input type="file" id="lettreMotivationFile" onchange="setFileName('lm', this)" required=""
-                        data-parsley-class-handler="#but-motiv" data-parsley-errors-container="#but-motiv">
-                    Ajouter une lettre de motivation*
+                    <input
+                            type="file"
+                            id="lettreMotivationFile"
+                            onchange="setFileName('lm', this)"
+                            required=""
+                            data-parsley-class-handler="#but-motiv"
+                            data-parsley-errors-container="#but-motiv"
+                            name="Lettre de Motivation"
+                    >
+                    Ajouter une lettre de motivation *
                 </label>
                 <span id="lm-filename"></span>
             </div>
@@ -422,7 +495,11 @@
         <div class="row">
             <div class="col-12 text_description">
                 <label>
-                    <input type="checkbox" id="checkbox_consent" required>
+                    <input
+                            type="checkbox"
+                            id="checkbox_consent"
+                            required
+                    >
                     J'accepte que ces données soient enregistrées par Sogilis à des fin de recrutement.*
                     <a href="mentions-legal.html#gestion-donnees">En savoir plus</a>
                 </label>
@@ -633,49 +710,34 @@
             return document.getElementById("checkbox_consent").checkValidity();
         }
 
+        function getJobs() {
+            let elt_jobs = [
+                document.getElementById('checkbox_dev'),
+                document.getElementById('checkbox_embarque'),
+                document.getElementById('checkbox_critique'),
+                document.getElementById('checkbox_ux'),
+            ];
+
+            let jobs = elt_jobs.filter(function (elt) {
+                return elt.checked;
+            }).map(function (elt) {
+                return elt.value;
+            });
+
+            return jobs;
+        }
+
         $(function () {
             $("#formulaire").parsley().on('form:validate', function (formInstance) {
-                var ok = formInstance.isValid();
-                console.log(ok);
-                if (ok && isConsentAccepted() && isCaptchaOk()) {
-                    let elt_postes = [
-                        document.getElementById('checkbox_dev'),
-                        document.getElementById('checkbox_embarque'),
-                        document.getElementById('checkbox_critique'),
-                        document.getElementById('checkbox_ux'),
-                    ];
+                const isFormValid = formInstance.isValid();
 
-                    let postes = elt_postes.filter(function (elt) {
-                        return elt.checked;
-                    }).map(function (elt) {
-                        return elt.value;
-                    })
-
-                    const data = {
-                        nom: document.getElementById("inputNom").value,
-                        prenom: document.getElementById('inputPrenom').value,
-                        email: document.getElementById('inputAdresse').value,
-                        postes: postes,
-                        lieu: document.querySelectorAll("input[name='lieu']")[0].checked ? "Lyon" : "Grenoble",
-                        message: document.getElementById("message").value,
-                        cv: document.getElementById("CvFile").files[0],
-                        lettreMotivation: document.getElementById("lettreMotivationFile").files[0],
-                        captcha: grecaptcha.getResponse(),
-                    };
+                if (isFormValid && isConsentAccepted() && isCaptchaOk()) {
+                    const form = document.getElementById("formulaire");
+                    const formData = new FormData(form);
+                    formData.delete("job[]");
+                    formData.append("Postes", getJobs());
 
                     const url = data.lieu === 'Lyon' ? 'https://formspree.io/f/mgepkkne' : 'https://formspree.io/f/xoqpddka';
-
-                    const formData = new FormData();
-                    formData.append("Nom", data.nom);
-                    formData.append("Prénom", data.prenom);
-                    formData.append("Email", data.email);
-                    formData.append("Postes", data.postes);
-                    formData.append("Lieu", data.lieu);
-                    formData.append("Message", data.message);
-                    formData.append("CV", data.cv);
-                    formData.append("Lettre de motivation", data.lettreMotivation);
-                    formData.append("g-recaptcha-response", data.captcha);
-
                     const fetchOptions = {
                         method: "POST",
                         headers: { 'Content-Type': 'multipart/form-data' },
