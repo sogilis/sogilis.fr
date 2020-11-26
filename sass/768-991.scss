@@ -476,9 +476,8 @@ $light-grey-blue:#EDF5F5;
 
 input{
 	border:3px solid $medium_grey;
-	text-indent:15px;
 	width:350px;
-	padding:10px;
+	padding: 10px 1em;
 	color:$medium_grey;
 	font-size:0.7em;
 	font-family: 'Montserrat', sans-serif !important;
@@ -497,10 +496,9 @@ input:focus{
 
 textarea{
 	border:3px solid $medium_grey;
-	text-indent:15px;
 	width:350px;
 	height:250px;
-	padding:10px;
+	padding: 10px 1em;
 	color:$medium_grey;
 	font-size:0.7em;
 	font-family: 'Montserrat', sans-serif !important;

@@ -36,7 +36,7 @@
   margin-bottom: 45px;
 }
 /* line 41, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__required {
+.nous-rejoindre .container-application__required {
   font-size: 13px;
   color: red;
   display: none;
@@ -46,66 +46,71 @@
   display: none;
 }
 /* line 51, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__message {
+.nous-rejoindre .container-application__message {
   width: 100%;
 }
 /* line 55, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__file-input {
+.nous-rejoindre .container-application__file-input {
   cursor: pointer;
 }
 /* line 59, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__failure,
-.nous-rejoindre .container-application .container-application__success {
+.nous-rejoindre .container-application__failure, .nous-rejoindre .container-application__success {
   margin-top: 15px;
 }
 /* line 64, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__submit-container {
+.nous-rejoindre .container-application__submit-container {
   display: flex;
-  justify-content: end;
 }
-/* line 69, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__submit-container__btn {
+/* line 68, ../sass/nous-rejoindre.scss */
+.nous-rejoindre .container-application__submit-container__btn {
   cursor: pointer;
+  margin-left: auto;
 }
-/* line 73, ../sass/nous-rejoindre.scss */
+@media (min-width: 48em) {
+  /* line 73, ../sass/nous-rejoindre.scss */
+  .nous-rejoindre .container-application__files {
+    display: flex;
+  }
+}
+@media (min-width: 48em) {
+  /* line 79, ../sass/nous-rejoindre.scss */
+  .nous-rejoindre .container-application__files-button {
+    margin-left: 1em;
+  }
+  /* line 83, ../sass/nous-rejoindre.scss */
+  .nous-rejoindre .container-application__files-button:first-child {
+    margin-left: 0;
+  }
+}
+/* line 89, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .container-application input[type=checkbox],
 .nous-rejoindre .container-application input[type=radio] {
   width: auto;
 }
-/* line 79, ../sass/nous-rejoindre.scss */
+/* line 95, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .container-application input[type=text],
 .nous-rejoindre .container-application input[type=email],
 .nous-rejoindre .container-application .container-application__file-input {
-  border: 3px solid #707070;
-  text-indent: 15px;
-  padding: 10px;
-  color: #707070;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 500;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 0;
+  width: 100%;
+  font-size: 1em;
 }
-/* line 95, ../sass/nous-rejoindre.scss */
+/* line 101, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .container-application input[type=text]:focus,
 .nous-rejoindre .container-application input[type=email]:focus,
 .nous-rejoindre .container-application .container-application__file-input:focus {
   border: 3px solid #016099;
   color: #016099;
 }
-/* line 101, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__file-input {
+/* line 107, ../sass/nous-rejoindre.scss */
+.nous-rejoindre .container-application__file-input {
   font-size: 12px;
-  padding: 8px;
+  padding: 10px 1em;
 }
-/* line 105, ../sass/nous-rejoindre.scss */
-.nous-rejoindre .container-application .container-application__file-input:hover {
+/* line 111, ../sass/nous-rejoindre.scss */
+.nous-rejoindre .container-application__file-input:hover {
   color: white;
 }
-/* line 112, ../sass/nous-rejoindre.scss */
+/* line 118, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_3__videos-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -115,34 +120,34 @@
   margin-bottom: 2em;
 }
 @media (min-width: 48em) {
-  /* line 112, ../sass/nous-rejoindre.scss */
+  /* line 118, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_3__videos-list {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
   }
 }
 @media (min-width: 75em) {
-  /* line 112, ../sass/nous-rejoindre.scss */
+  /* line 118, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_3__videos-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* line 130, ../sass/nous-rejoindre.scss */
+/* line 136, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_3__quote {
   padding: 0 1em;
   margin: 0 0 1em;
 }
 @media (min-width: 48em) {
-  /* line 130, ../sass/nous-rejoindre.scss */
+  /* line 136, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_3__quote {
     padding: 0;
   }
 }
-/* line 141, ../sass/nous-rejoindre.scss */
+/* line 147, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legendes {
   width: 100%;
 }
-/* line 145, ../sass/nous-rejoindre.scss */
+/* line 151, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende {
   color: #016099;
   font-family: 'Montserrat', sans-serif;
@@ -151,21 +156,21 @@
   padding: 0;
 }
 @media (min-width: 48em) {
-  /* line 145, ../sass/nous-rejoindre.scss */
+  /* line 151, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_2__legende {
     font-size: 1em;
   }
 }
-/* line 156, ../sass/nous-rejoindre.scss */
+/* line 162, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende:nth-child(3) {
   padding-left: 3em;
 }
-/* line 160, ../sass/nous-rejoindre.scss */
+/* line 166, ../sass/nous-rejoindre.scss */
 .nous-rejoindre .jobs_zone_2__legende:last-child {
   padding-left: 3em;
 }
 @media (min-width: 48em) {
-  /* line 160, ../sass/nous-rejoindre.scss */
+  /* line 166, ../sass/nous-rejoindre.scss */
   .nous-rejoindre .jobs_zone_2__legende:last-child {
     padding-left: 5.5em;
   }

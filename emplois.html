@@ -331,17 +331,17 @@
             <div class="row">
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputNom">Nom</label>
-                    <input type="text" class="form-control" id="inputNom" placeholder="Nom*" required>
+                    <input type="text" id="inputNom" placeholder="Nom*" required>
                     <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputPrenom">Prénom</label>
-                    <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom*" required>
+                    <input type="text" id="inputPrenom" placeholder="Prénom*" required>
                     <span class="container-application__required">Merci de remplir ce champ</span>
                 </div>
                 <div class="form-group col-12 col-md-4">
                     <label class="sr-only" for="inputAdresse">Adresse email</label>
-                    <input type="email" class="form-control" id="inputAdresse" placeholder="Adresse email*" required>
+                    <input type="email" id="inputAdresse" placeholder="Adresse email*" required>
                     <span class="container-application__required">Merci de fournir une adresse valide</span>
                 </div>
             </div>
@@ -403,15 +403,15 @@
         <div class="form-group">
             <textarea id="message" rows="3" placeholder="Message" class="container-application__message"></textarea>
         </div>
-        <div class="row">
-            <div class="form-group col-12 col-md-6 col-lg-3">
+        <div class="form-group container-application__files">
+            <div class="container-application__files-button">
                 <label class="container-application__file-input btn-dark-grey" onclick="getFile('cv')">
                     <input type="file" id="CvFile" onchange="setFileName('cv', this)">
                     Ajouter un CV
                 </label>
                 <span id="cv-filename"></span>
             </div>
-            <div class="form-group col-12 col-md-6 col-lg-3">
+            <div class="container-application__files-button">
                 <label class="container-application__file-input btn-dark-grey" onclick="getFile('lm')">
                     <input type="file" id="lettreMotivationFile" onchange="setFileName('lm', this)">
                     Ajouter une lettre de motivation
