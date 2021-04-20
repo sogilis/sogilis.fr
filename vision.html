@@ -33,15 +33,8 @@
 
         <link rel="icon" type="image/png" href="./img/favicon.png"/>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174646886-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs/tarteaucitron.js"> </script>
 
-          gtag('config', 'UA-174646886-1');
-        </script>
     </head>
 
     <body>
@@ -504,14 +497,18 @@
     <hr id="footer-hr" />
 
     <section id="footer-subfooter">
-      <p>Sogilis - Tous Droits Réservés - 2020</p>
       <a
-        href="./mentions-legal.html"
+        href="#"
         class="footer-nav-a"
-      >
-        Mentions Légales
-      </a>
+        onclick='tarteaucitron.userInterface.openPanel();'
+        >Gestion des cookies</a>
+      <a
+        href="https://sogilis.fr/mentions-legal.html"
+        class="footer-nav-a"
+        >Mentions légales</a>
+      <p>Sogilis - Tous Droits Réservés - 2021</p>
     </section>
+
   </div>
 </footer>
 <script src="./js/scripts.js"></script>
